@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C104DCAE008F9A1D215BD7E /* Pods_Alttex_messager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA1383F50C9EBE425581EF1 /* Pods_Alttex_messager.framework */; };
+		AB1EFDF1200E333B005F53C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1EFDF0200E333B005F53C3 /* AppDelegate.swift */; };
+		AB1EFDF6200E333B005F53C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1EFDF4200E333B005F53C3 /* Main.storyboard */; };
+		AB1EFDF8200E333B005F53C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1EFDF7200E333B005F53C3 /* Assets.xcassets */; };
+		AB1EFDFB200E333B005F53C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1EFDF9200E333B005F53C3 /* LaunchScreen.storyboard */; };
+		AB1EFE03200E3572005F53C3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1EFE02200E3572005F53C3 /* ChatViewController.swift */; };
+		AB1EFE05200E4312005F53C3 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1EFE04200E4312005F53C3 /* MessagesViewController.swift */; };
+		AB1EFE0A200E4749005F53C3 /* MessagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1EFE09200E4749005F53C3 /* MessagesModel.swift */; };
+		AB1EFE0C200E5176005F53C3 /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1EFE0B200E5175005F53C3 /* ColorsExtensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3FA1383F50C9EBE425581EF1 /* Pods_Alttex_messager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alttex_messager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD3BD34B78B157DC73C1355 /* Pods-Alttex_messager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alttex_messager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alttex_messager/Pods-Alttex_messager.release.xcconfig"; sourceTree = "<group>"; };
+		AB1EFDED200E333B005F53C3 /* Alttex_messager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alttex_messager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1EFDF0200E333B005F53C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB1EFDF5200E333B005F53C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB1EFDF7200E333B005F53C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB1EFDFA200E333B005F53C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB1EFDFC200E333B005F53C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB1EFE02200E3572005F53C3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AB1EFE04200E4312005F53C3 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		AB1EFE09200E4749005F53C3 /* MessagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesModel.swift; sourceTree = "<group>"; };
+		AB1EFE0B200E5175005F53C3 /* ColorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtensions.swift; sourceTree = "<group>"; };
+		D92AA1604C44920548ED41F7 /* Pods-Alttex_messager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alttex_messager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alttex_messager/Pods-Alttex_messager.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB1EFDEA200E333B005F53C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C104DCAE008F9A1D215BD7E /* Pods_Alttex_messager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60F012E8745955ADBC627A35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D92AA1604C44920548ED41F7 /* Pods-Alttex_messager.debug.xcconfig */,
+				7FD3BD34B78B157DC73C1355 /* Pods-Alttex_messager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AB1EFDE4200E333B005F53C3 = {
+			isa = PBXGroup;
+			children = (
+				AB1EFDEF200E333B005F53C3 /* Alttex_messager */,
+				AB1EFDEE200E333B005F53C3 /* Products */,
+				60F012E8745955ADBC627A35 /* Pods */,
+				B9AA62130B336B9FAFA9EB55 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AB1EFDEE200E333B005F53C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB1EFDED200E333B005F53C3 /* Alttex_messager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB1EFDEF200E333B005F53C3 /* Alttex_messager */ = {
+			isa = PBXGroup;
+			children = (
+				AB1EFDF0200E333B005F53C3 /* AppDelegate.swift */,
+				AB1EFE07200E46B9005F53C3 /* Extensions */,
+				AB1EFE06200E46B0005F53C3 /* Helpers */,
+				AB1EFE08200E46C5005F53C3 /* Models */,
+				AB1EFE04200E4312005F53C3 /* MessagesViewController.swift */,
+				AB1EFE02200E3572005F53C3 /* ChatViewController.swift */,
+				AB1EFDF4200E333B005F53C3 /* Main.storyboard */,
+				AB1EFDF7200E333B005F53C3 /* Assets.xcassets */,
+				AB1EFDF9200E333B005F53C3 /* LaunchScreen.storyboard */,
+				AB1EFDFC200E333B005F53C3 /* Info.plist */,
+			);
+			path = Alttex_messager;
+			sourceTree = "<group>";
+		};
+		AB1EFE06200E46B0005F53C3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AB1EFE07200E46B9005F53C3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB1EFE0B200E5175005F53C3 /* ColorsExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB1EFE08200E46C5005F53C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB1EFE09200E4749005F53C3 /* MessagesModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9AA62130B336B9FAFA9EB55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FA1383F50C9EBE425581EF1 /* Pods_Alttex_messager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB1EFDEC200E333B005F53C3 /* Alttex_messager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB1EFDFF200E333B005F53C3 /* Build configuration list for PBXNativeTarget "Alttex_messager" */;
+			buildPhases = (
+				C18C00593DA4C077E3C72E70 /* [CP] Check Pods Manifest.lock */,
+				AB1EFDE9200E333B005F53C3 /* Sources */,
+				AB1EFDEA200E333B005F53C3 /* Frameworks */,
+				AB1EFDEB200E333B005F53C3 /* Resources */,
+				4A9CBAB834E8EAFC45E16BD2 /* [CP] Embed Pods Frameworks */,
+				920F0C9CC7E70557955DF7A7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alttex_messager;
+			productName = Alttex_messager;
+			productReference = AB1EFDED200E333B005F53C3 /* Alttex_messager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB1EFDE5200E333B005F53C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Vlad Kovryzhenko";
+				TargetAttributes = {
+					AB1EFDEC200E333B005F53C3 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AB1EFDE8200E333B005F53C3 /* Build configuration list for PBXProject "Alttex_messager" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB1EFDE4200E333B005F53C3;
+			productRefGroup = AB1EFDEE200E333B005F53C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB1EFDEC200E333B005F53C3 /* Alttex_messager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB1EFDEB200E333B005F53C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1EFDFB200E333B005F53C3 /* LaunchScreen.storyboard in Resources */,
+				AB1EFDF8200E333B005F53C3 /* Assets.xcassets in Resources */,
+				AB1EFDF6200E333B005F53C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A9CBAB834E8EAFC45E16BD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Alttex_messager/Pods-Alttex_messager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alttex_messager/Pods-Alttex_messager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		920F0C9CC7E70557955DF7A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alttex_messager/Pods-Alttex_messager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C18C00593DA4C077E3C72E70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alttex_messager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB1EFDE9200E333B005F53C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1EFE0A200E4749005F53C3 /* MessagesModel.swift in Sources */,
+				AB1EFE0C200E5176005F53C3 /* ColorsExtensions.swift in Sources */,
+				AB1EFE03200E3572005F53C3 /* ChatViewController.swift in Sources */,
+				AB1EFE05200E4312005F53C3 /* MessagesViewController.swift in Sources */,
+				AB1EFDF1200E333B005F53C3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB1EFDF4200E333B005F53C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB1EFDF5200E333B005F53C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AB1EFDF9200E333B005F53C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB1EFDFA200E333B005F53C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB1EFDFD200E333B005F53C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB1EFDFE200E333B005F53C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB1EFE00200E333B005F53C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D92AA1604C44920548ED41F7 /* Pods-Alttex_messager.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8S6X8B5D2;
+				INFOPLIST_FILE = Alttex_messager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MadeInHeaven.Alttex-messager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB1EFE01200E333B005F53C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD3BD34B78B157DC73C1355 /* Pods-Alttex_messager.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8S6X8B5D2;
+				INFOPLIST_FILE = Alttex_messager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MadeInHeaven.Alttex-messager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB1EFDE8200E333B005F53C3 /* Build configuration list for PBXProject "Alttex_messager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1EFDFD200E333B005F53C3 /* Debug */,
+				AB1EFDFE200E333B005F53C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB1EFDFF200E333B005F53C3 /* Build configuration list for PBXNativeTarget "Alttex_messager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1EFE00200E333B005F53C3 /* Debug */,
+				AB1EFE01200E333B005F53C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB1EFDE5200E333B005F53C3 /* Project object */;
+}
