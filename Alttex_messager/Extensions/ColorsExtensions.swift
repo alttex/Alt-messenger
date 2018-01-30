@@ -9,26 +9,16 @@
 import Foundation
 import UIKit
 
-extension UIColor {
-    
-    class func rgba(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {
-        let maxValue : CGFloat = 255
-        return UIColor(red: r / maxValue, green: g / maxValue, blue: b / maxValue, alpha: a)
-    }
-    
-    open class var customGreyWithOpacity : UIColor {
-        return UIColor.rgba(17, 17, 17, 0.1)
-    }
-    
-    open class var customLightBlue : UIColor {
-        return UIColor.rgba(151, 187, 240, 1)
-    }
-    
-    open class var customLightGrey : UIColor {
-        return UIColor.rgba(248, 248, 248, 1)
-    }
-    
-    open class var customPurple : UIColor {
-        return UIColor.rgba(157, 181, 240, 1)
+struct GlobalVariables {
+    static let blue = UIColor.rbg(r: 129, g: 144, b: 255)
+    static let white = UIColor.rbg(r: 255, g: 255, b: 255)
+    static let customGray = UIColor.rbg(r: 34, g: 34, b: 34)
+}
+
+//Extensions
+extension UIColor{
+    class func rbg(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
+        let color = UIColor.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
+        return color
     }
 }
