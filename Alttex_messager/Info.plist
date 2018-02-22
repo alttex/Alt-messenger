@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Alt messenger</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -16,10 +18,33 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1043157831411-gg2g5h3anmpb0r2ao82vs99p0kr42rg5</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Media access</string>
+	<key>NSCameraUsageDescription</key>
+	<string>App need acces to camera</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>App needs access to location settings</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App needs acces to location settings</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>may i use your gallery?</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

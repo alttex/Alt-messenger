@@ -50,11 +50,11 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         self.navigationItem.title = self.currentUser?.name
         self.navigationItem.setHidesBackButton(true, animated: false)
         let icon = UIImage.init(named: "back")?.withRenderingMode(.alwaysOriginal)
-        let phoneIcon = UIImage.init(named: "phone_icon")?.withRenderingMode(.alwaysOriginal)
-        let phoneButton = UIBarButtonItem.init(image: phoneIcon!, style: .plain, target: self, action: #selector(self.dismissSelf))
+        let userIcon = UIImage.init(named: "icons8-contacts")?.withRenderingMode(.alwaysOriginal)
+        let userButton = UIBarButtonItem.init(image: userIcon!, style: .plain, target: self, action: #selector(self.toUserInfo))
        let backButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(self.dismissSelf))
         self.navigationItem.leftBarButtonItem = backButton
-        self.navigationItem.rightBarButtonItem = phoneButton
+        self.navigationItem.rightBarButtonItem = userButton
         self.locationManager.delegate = self
     }
     
@@ -79,6 +79,14 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
             navController.popViewController(animated: true)
         }
     }
+    
+    
+    @objc func toUserInfo(){    
+        performSegue(withIdentifier: "toUserInfo", sender: self)
+
+    }
+    
+    
     
     func composeMessage(type: MessageType, content: Any)  {
         let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
@@ -304,13 +312,15 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.containerView.layer.cornerRadius = 15
         NotificationCenter.default.removeObserver(self)
         Message.markMessagesRead(forUserID: self.currentUser!.id)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  self.tabBarController?.tabBar.isHidden = true
+        self.containerView.layer.cornerRadius = 15
+        self.tabBarController?.tabBar.isHidden = false
         self.customization()
         self.fetchData()
     }

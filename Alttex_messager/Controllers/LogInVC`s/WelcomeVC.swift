@@ -9,8 +9,12 @@
 import Foundation
 import UIKit
 import Photos
+import Firebase
+import GoogleSignIn
 
-class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
+    
+    let firebaseDataManager: FirebaseManager = FirebaseManager()
     
     //MARK: Properties
     @IBOutlet weak var darkView: UIView!
@@ -25,7 +29,6 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
     @IBOutlet weak var loginEmailField: UITextField!
     @IBOutlet weak var loginPasswordField: UITextField!
     @IBOutlet weak var cloudsView: UIImageView!
-    @IBOutlet weak var cloudsViewLeading: NSLayoutConstraint!
     @IBOutlet var inputFields: [UITextField]!
     var loginViewTopConstraint: NSLayoutConstraint!
     var registerTopConstraint: NSLayoutConstraint!
@@ -82,10 +85,47 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
         }
     }
     
+    //
+    //main google logging in func
+    @IBAction func googleBtnTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (user != nil){
+            if let authentication = user.authentication {
+                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+                Auth.auth().signIn(with: credential, completion: { (user, error) -> Void in
+                    if error == nil {
+                        self.firebaseDataManager.isUserSetup(userID: (Auth.auth().currentUser?.uid)!){ (answer) -> () in
+                            if(answer){
+                                
+                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                let controller = storyboard.instantiateViewController(withIdentifier: "toTabBar") as! UITabBarController
+                                
+                                self.show(controller, sender: self)
+                                
+                            } else {
+                                print("try again!")
+                            }
+                        }
+                    }
+                })
+            }
+        }
+    }
+    //end of main google logging in func
+    
+    
+    
     func pushTomainView() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "toTabBar")
-        self.show(vc!, sender: nil)
-        //vc?.performSegue(withIdentifier: "toTabBar", sender: self)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "toTabBar") as! UITabBarController
+        
+        self.show(controller, sender: self)
     }
     
     func openPhotoPickerWith(source: PhotoSource) {
@@ -209,6 +249,19 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
         picker.dismiss(animated: true, completion: nil)
     }
     
+    
+    
+    //Google signing
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
+    }
+    
+    
+    
     //MARK: Viewcontroller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -227,8 +280,14 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
                                                                               attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         self.loginPasswordField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                                               attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        Auth.auth()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
    
