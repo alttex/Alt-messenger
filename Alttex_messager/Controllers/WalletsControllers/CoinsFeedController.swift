@@ -216,8 +216,8 @@ class CoinsFeedController: UITableViewController, UISearchResultsUpdating {
             ThemeManager.setTheme(index: 1)
         }
         
-        self.tabBarController?.tabBar.theme_barTintColor = ["#000", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#000"]
+        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
+        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
         self.tableView.theme_backgroundColor = ["#000", "#FFF"]
         self.view.theme_backgroundColor = ["#000", "#FFF"]
         self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]

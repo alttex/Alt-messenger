@@ -28,7 +28,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func updateUI(){
         //places dollarsign in front of sale item price
         if let priceVal: String = saleItem?.price! {
-            priceLabel.text = "$\(priceVal)"
+            priceLabel.text = "ETH \(0.504)" //  priceVal
         }
 
         if (saleItem?.imageURL != nil){
@@ -47,7 +47,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func updateUIFromJson(){
         //places dollarsign in front of sale item price
         if let priceVal: String = saleItem?.price! {
-            priceLabel.text = "$\(priceVal)"
+            priceLabel.text = "ETH \(0.504)"  ///priceVal
         }
         setImageWhenNeeded()
         self.layer.cornerRadius = 8.0

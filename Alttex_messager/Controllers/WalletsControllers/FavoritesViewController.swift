@@ -132,13 +132,13 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func updateTheme() {
-        self.tabBarController?.tabBar.theme_barTintColor = ["#000", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#000"]
+        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
+        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
         self.view.theme_backgroundColor = ["#000", "#FFF"]
         self.favTableView.theme_backgroundColor = ["#000", "#FFF"]
         self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
         self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_tintColor = ["#000", "#FFF"]
+        self.navigationController?.navigationBar.theme_tintColor = ["#FFF", "#000"]
         self.navigationController?.navigationBar.theme_barTintColor = ["#FFF", "#000"]
         self.navigationController?.navigationBar.theme_tintColor = ["#000", "#FFF"]
         

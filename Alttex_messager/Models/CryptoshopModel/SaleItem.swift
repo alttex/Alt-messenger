@@ -75,7 +75,7 @@ class SaleItem {
     init() {
         image = placeholderImage!
         name = "Currently Un-named"
-        price = "00.00"
+        price = "0.000000"
         description = "no description"
         category = "no category"
     }

@@ -133,13 +133,13 @@ class SettingsViewController: UIViewController {
         default:
             ThemeManager.setTheme(index: 1)
         }
-        
-        self.tabBarController?.tabBar.theme_barTintColor = ["#000", "#FFF"]
-        self.navigationController?.navigationBar.theme_barTintColor = ["#000", "#FFF"]
+
+        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
+        self.navigationController?.navigationBar.theme_barTintColor = ["#01b207", "#FFF"]
         self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#000", "#FFF"]
         self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#000", "#FFF"]
         self.navigationController?.navigationBar.theme_tintColor = ["#000", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#000"]
+        
         self.navigationController?.navigationBar.theme_tintColor = ["#000", "#FFF"]
         self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
         self.navigationController?.navigationBar.theme_largeTitleTextAttributes =  [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]

@@ -31,7 +31,7 @@ class MyListingCollectionViewCell: UICollectionViewCell {
     private func updateUI(){
         //places dollarsign in front of sale item price
         if let priceVal: String = saleItem?.price! {
-            priceLabel.text = "$\(priceVal)"
+            priceLabel.text = "ETH \(priceVal)"
         }
         if (saleItem?.imageURL != nil){
             setImageFromURL(imgURL: (saleItem?.imageURL)!)
@@ -46,7 +46,7 @@ class MyListingCollectionViewCell: UICollectionViewCell {
      */
     private func updateUIFromJson(){
         if let priceVal: String = saleItem?.price! {
-            priceLabel.text = "$\(priceVal)"
+            priceLabel.text = "ETH \(priceVal)"
         }
         if let status: String = saleItem?.itemStatus! {
             statusLabel.text = status

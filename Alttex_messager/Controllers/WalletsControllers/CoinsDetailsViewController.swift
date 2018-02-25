@@ -48,7 +48,7 @@ class CoinsDetailsViewController: UIViewController {
         
         if favorites.contains(id) {
             self.favorited = true
-            favButton.backgroundColor = UIColor(hexString: "D65465")
+            favButton.backgroundColor = UIColor(hexString: "68D432")
             favButton.setTitle("Remove Favorite", for: .normal)
         } else {
             self.favorited = false
@@ -74,7 +74,7 @@ class CoinsDetailsViewController: UIViewController {
             if Connectivity.isConnectedToInternet {
                 SwiftSpinner.show("Updating \(id)...")
                 // Pull Coin Data
-                Alamofire.request("https://api.coinmarketcap.com/v1/ticker/\(id)/").responseJSON { response in
+                Alamofire.request("https://api.coinmarketcap.com/v1/ticker/\(id)/?convert=USD").responseJSON { response in
                     if (response.result.value as? [[String : AnyObject]])?.count == 0 {
                         SweetAlert().showAlert("No coin data found")
                         self.doneButton()
@@ -136,7 +136,7 @@ class CoinsDetailsViewController: UIViewController {
         // format prices and set to labels
         priceUSDLabel.text = "Price USD: \(coin.priceUSD.formatUSD())"
         priceBTCLabel.text = "Price BTC: \(coin.priceBTC)"
-        url = "https://coinmarketcap.com/currencies/\(coin.id)/"
+        url = "https://coinmarketcap.com/currencies/\(coin.id)/?convert=USD"
         
         if coin.lastUpdated != "unknown" {
             //Jan 12, 2018 1:15 AM UTC
@@ -278,7 +278,7 @@ class CoinsDetailsViewController: UIViewController {
         if Connectivity.isConnectedToInternet {
             SwiftSpinner.show("Updating Data...")
             // Pull Coin Data
-            Alamofire.request("https://api.coinmarketcap.com/v1/ticker/\(id)/").responseJSON { response in
+            Alamofire.request("https://api.coinmarketcap.com/v1/ticker/\(id)/convert=USD").responseJSON { response in
                 for coinJSON in (response.result.value as? [[String : AnyObject]])! {
                     if let coin = CoinEntry.init(json: coinJSON) {
                         let index = entries.index(where: {$0.id == self.id})
@@ -312,8 +312,8 @@ class CoinsDetailsViewController: UIViewController {
     
     
     func updateTheme() {        
-        self.tabBarController?.tabBar.theme_barTintColor = ["#000", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#000"]
+        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
+        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
         self.view.theme_backgroundColor = ["#000", "#fff"]
         self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
         self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]

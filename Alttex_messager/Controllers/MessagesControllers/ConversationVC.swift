@@ -188,7 +188,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         if self.items.count > 0 {
             self.selectedUser = self.items[indexPath.row].user
             self.performSegue(withIdentifier: "segue", sender: self)
-            self.tabBarController?.tabBar.isHidden = true
+            
         }
     }
     
@@ -196,7 +196,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customization()
-        
+        self.tabBarController?.tabBar.isHidden = false
         self.title = "Conversations"
     //self.navigationBar.tintColor = UIColor.whiteColor()
         self.fetchData()
@@ -205,6 +205,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.showEmailAlert()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {

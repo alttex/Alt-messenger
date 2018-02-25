@@ -259,7 +259,7 @@ class AddWalletViewController: UIViewController, UITableViewDelegate, UITableVie
         alert.addTextField { (costTextField) in
             costTextField.placeholder = "Cost: $0.00"
             costTextField.keyboardType = .decimalPad
-            costTextField.text = "$\(self.coins[indexPath.row].cost)"
+            costTextField.text = "USD \(self.coins[indexPath.row].cost)"
             
             let heightConstraint = NSLayoutConstraint(item: costTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30)
             costTextField.addConstraint(heightConstraint)
@@ -398,7 +398,7 @@ class AddWalletViewController: UIViewController, UITableViewDelegate, UITableVie
             newValue = newValue + amount
         }
         
-        value = "\(newValue)"
+        value = "USD \(newValue)"
         
         if value == "" {
             value = "0.0"
@@ -497,8 +497,8 @@ class AddWalletViewController: UIViewController, UITableViewDelegate, UITableVie
             nameTextField.layer.borderWidth = 1.0
         }
         
-        self.tabBarController?.tabBar.theme_barTintColor = ["#000", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#000"]
+        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
+        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
         self.view.theme_backgroundColor = ["#000", "#FFF"]
         self.walletTableView.theme_backgroundColor = ["#000", "#FFF"]
         self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]

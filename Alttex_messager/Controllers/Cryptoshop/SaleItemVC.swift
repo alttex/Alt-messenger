@@ -69,7 +69,7 @@ class SaleItemVC: UIViewController {
             itemNameLabel.text = saleItem?.name!
         }
         if(saleItem?.price! != nil){
-            itemPriceLabel.text =  "$\((saleItem?.price)!)"
+            itemPriceLabel.text =  "ETH \(("0.504"))"  ///saleItem?.price
         }
         if(saleItem?.description! != nil){
             itemDescLabel.text = saleItem?.description!
@@ -85,7 +85,7 @@ class SaleItemVC: UIViewController {
      */
     func updateUIFromJson() {
         if(saleItem?.name != nil)       { itemNameLabel.text = saleItem?.name!              }
-        if(saleItem?.price != nil)      { itemPriceLabel.text =  "$\((saleItem?.price)!)"   }
+        if(saleItem?.price != nil)      { itemPriceLabel.text =  "ETH \(("0.504"))"   }     // saleItem?.price
         if(saleItem?.description != nil){ itemDescLabel.text = saleItem?.description!       }
         if(saleItem?.image != nil)     { itemImageView.image = saleItem?.image!             }
         if(saleItem?.creatorUserID != nil){
