@@ -47,11 +47,9 @@
 		AB2514BE203265FD00C95276 /* Swaps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB2514BC203265FD00C95276 /* Swaps.xcdatamodeld */; };
 		AB2514C02032661900C95276 /* Cryptoshop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2514BF2032661900C95276 /* Cryptoshop.storyboard */; };
 		AB2514C220326C9400C95276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB2514C120326C9400C95276 /* GoogleService-Info.plist */; };
-		AB2E85722034413600067841 /* AddWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E856D2034413500067841 /* AddWalletViewController.swift */; };
 		AB2E85732034413600067841 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E856E2034413500067841 /* FavoritesViewController.swift */; };
 		AB2E85742034413600067841 /* CoinsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E856F2034413500067841 /* CoinsDetailsViewController.swift */; };
 		AB2E85752034413600067841 /* CoinsFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E85702034413600067841 /* CoinsFeedController.swift */; };
-		AB2E85762034413600067841 /* MyWalletsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E85712034413600067841 /* MyWalletsVC.swift */; };
 		AB2E85842034414B00067841 /* WalletEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E85772034414600067841 /* WalletEntry.swift */; };
 		AB2E85852034414B00067841 /* WalletValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E85782034414600067841 /* WalletValueCell.swift */; };
 		AB2E85862034414B00067841 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E85792034414700067841 /* Extensions.swift */; };
@@ -133,11 +131,9 @@
 		AB2514BD203265FD00C95276 /* Radford_Swaps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Radford_Swaps.xcdatamodel; sourceTree = "<group>"; };
 		AB2514BF2032661900C95276 /* Cryptoshop.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cryptoshop.storyboard; sourceTree = "<group>"; };
 		AB2514C120326C9400C95276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		AB2E856D2034413500067841 /* AddWalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWalletViewController.swift; sourceTree = "<group>"; };
 		AB2E856E2034413500067841 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		AB2E856F2034413500067841 /* CoinsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinsDetailsViewController.swift; sourceTree = "<group>"; };
 		AB2E85702034413600067841 /* CoinsFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinsFeedController.swift; sourceTree = "<group>"; };
-		AB2E85712034413600067841 /* MyWalletsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWalletsVC.swift; sourceTree = "<group>"; };
 		AB2E85772034414600067841 /* WalletEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletEntry.swift; sourceTree = "<group>"; };
 		AB2E85782034414600067841 /* WalletValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletValueCell.swift; sourceTree = "<group>"; };
 		AB2E85792034414700067841 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -431,11 +427,9 @@
 		AB72EE6B2010A14A009A7AB8 /* WalletsControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AB2E856D2034413500067841 /* AddWalletViewController.swift */,
 				AB2E856F2034413500067841 /* CoinsDetailsViewController.swift */,
 				AB2E85702034413600067841 /* CoinsFeedController.swift */,
 				AB2E856E2034413500067841 /* FavoritesViewController.swift */,
-				AB2E85712034413600067841 /* MyWalletsVC.swift */,
 				AB72EE6C2010A18A009A7AB8 /* WalletVC.swift */,
 				AB9F24352034688A00C6521C /* WebViewController.swift */,
 				AB72EE6E2010A416009A7AB8 /* ChartsViewController.swift */,
@@ -693,7 +687,6 @@
 				AB2E85852034414B00067841 /* WalletValueCell.swift in Sources */,
 				AB21824120110E0D00162BCB /* BEMCheckBoxGroup.m in Sources */,
 				AB2E85862034414B00067841 /* Extensions.swift in Sources */,
-				AB2E85762034413600067841 /* MyWalletsVC.swift in Sources */,
 				AB1EFE0C200E5176005F53C3 /* ColorsExtensions.swift in Sources */,
 				AB824BD7203C518700955333 /* UserInfoVC.swift in Sources */,
 				AB2E858C2034414B00067841 /* FeedCell.swift in Sources */,
@@ -706,7 +699,6 @@
 				AB2E85732034413600067841 /* FavoritesViewController.swift in Sources */,
 				ABBFE0B3200F9D6000DC4BC8 /* ConversationModel.swift in Sources */,
 				ABBFE0AD200F96FC00DC4BC8 /* CustomCells.swift in Sources */,
-				AB2E85722034413600067841 /* AddWalletViewController.swift in Sources */,
 				AB2514A32032647E00C95276 /* KeyboardHandler.swift in Sources */,
 				AB0F03F020333429001CAADA /* Currency.swift in Sources */,
 				AB72EE6F2010A416009A7AB8 /* ChartsViewController.swift in Sources */,
