@@ -1,0 +1,6 @@
+framework module Pods_Alttex_messager {
+  umbrella header "Pods-Alttex_messager-umbrella.h"
+
+  export *
+  module * { export * }
+}

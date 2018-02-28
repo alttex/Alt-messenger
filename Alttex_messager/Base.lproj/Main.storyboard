@@ -966,7 +966,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="z1K-fK-5xb"/>
                                             </constraints>
-                                            <color key="textColor" red="0.44312316550000003" green="1" blue="0.3816316958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.19367638170000001" green="1" blue="0.22395219929999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                             <connections>
@@ -995,7 +995,7 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EV2-RL-l9i" customClass="GIDSignInButton">
-                            <rect key="frame" x="20" y="491" width="190" height="51"/>
+                            <rect key="frame" x="20" y="491" width="190" height="49"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="190" id="FHi-7R-8v9"/>
@@ -1005,10 +1005,10 @@
                             </connections>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4M-uL-cco" customClass="RoundedButton" customModule="Alttex_messager" customModuleProvider="target">
-                            <rect key="frame" x="242" y="496" width="120" height="40"/>
+                            <rect key="frame" x="247" y="494" width="125" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="120" id="0kQ-7T-qej"/>
-                                <constraint firstAttribute="height" constant="40" id="OX9-5q-IzW"/>
+                                <constraint firstAttribute="width" constant="125" id="0kQ-7T-qej"/>
+                                <constraint firstAttribute="height" constant="45" id="OX9-5q-IzW"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                             <state key="normal" title="Sign In" backgroundImage="button">
@@ -1021,18 +1021,18 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="G4M-uL-cco" firstAttribute="centerX" secondItem="61G-Yx-GkW" secondAttribute="centerX" constant="76" id="2z5-a0-yRL"/>
-                        <constraint firstItem="G4M-uL-cco" firstAttribute="leading" secondItem="EV2-RL-l9i" secondAttribute="trailing" constant="32" id="37q-lR-bTi"/>
+                        <constraint firstItem="G4M-uL-cco" firstAttribute="centerX" secondItem="61G-Yx-GkW" secondAttribute="centerX" constant="83.5" id="2z5-a0-yRL"/>
+                        <constraint firstItem="G4M-uL-cco" firstAttribute="leading" secondItem="EV2-RL-l9i" secondAttribute="trailing" constant="37" id="37q-lR-bTi"/>
                         <constraint firstItem="nXo-aa-zlL" firstAttribute="centerX" secondItem="61G-Yx-GkW" secondAttribute="centerX" id="8nn-eU-jUy"/>
                         <constraint firstItem="nXo-aa-zlL" firstAttribute="top" secondItem="61G-Yx-GkW" secondAttribute="top" constant="12" id="FK7-SD-sew"/>
                         <constraint firstItem="EV2-RL-l9i" firstAttribute="leading" secondItem="kcT-qn-ToO" secondAttribute="leading" constant="-25" id="LNh-kD-IhD"/>
                         <constraint firstItem="kcT-qn-ToO" firstAttribute="top" secondItem="nXo-aa-zlL" secondAttribute="bottom" constant="12" id="OQh-Qi-U3B"/>
                         <constraint firstItem="nXo-aa-zlL" firstAttribute="width" secondItem="61G-Yx-GkW" secondAttribute="width" multiplier="0.8" id="SEq-TY-Hzd"/>
-                        <constraint firstItem="G4M-uL-cco" firstAttribute="top" secondItem="kcT-qn-ToO" secondAttribute="bottom" constant="13" id="VyS-Ev-gOm"/>
+                        <constraint firstItem="G4M-uL-cco" firstAttribute="top" secondItem="kcT-qn-ToO" secondAttribute="bottom" constant="11" id="VyS-Ev-gOm"/>
                         <constraint firstItem="kcT-qn-ToO" firstAttribute="centerX" secondItem="61G-Yx-GkW" secondAttribute="centerX" id="hhf-vD-ieh"/>
-                        <constraint firstAttribute="bottom" secondItem="G4M-uL-cco" secondAttribute="bottom" constant="29" id="hhq-ia-guO"/>
+                        <constraint firstAttribute="bottom" secondItem="G4M-uL-cco" secondAttribute="bottom" constant="26" id="hhq-ia-guO"/>
                         <constraint firstItem="kcT-qn-ToO" firstAttribute="width" secondItem="61G-Yx-GkW" secondAttribute="width" multiplier="0.8" id="qwh-im-nUv"/>
-                        <constraint firstItem="EV2-RL-l9i" firstAttribute="centerY" secondItem="G4M-uL-cco" secondAttribute="centerY" id="rXi-ZM-wxl"/>
+                        <constraint firstItem="EV2-RL-l9i" firstAttribute="centerY" secondItem="G4M-uL-cco" secondAttribute="centerY" constant="-1" id="rXi-ZM-wxl"/>
                         <constraint firstItem="EV2-RL-l9i" firstAttribute="top" secondItem="kcT-qn-ToO" secondAttribute="bottom" constant="8" symbolic="YES" id="yVt-R3-fwZ"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="LAH-ed-ZMf"/>
@@ -2162,7 +2162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SMl-qu-FiZ">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favCell" id="OSf-N4-BNb" customClass="FavCell" customModule="Alttex_messager" customModuleProvider="target">
@@ -2233,7 +2233,7 @@
                             <constraint firstItem="SMl-qu-FiZ" firstAttribute="leading" secondItem="bdf-EJ-AJn" secondAttribute="leading" id="340-1J-XsY"/>
                             <constraint firstItem="bdf-EJ-AJn" firstAttribute="trailing" secondItem="SMl-qu-FiZ" secondAttribute="trailing" id="R0n-zW-efl"/>
                             <constraint firstItem="SMl-qu-FiZ" firstAttribute="top" secondItem="bdf-EJ-AJn" secondAttribute="top" id="VS0-hS-3VM"/>
-                            <constraint firstItem="bdf-EJ-AJn" firstAttribute="bottom" secondItem="SMl-qu-FiZ" secondAttribute="bottom" id="ln1-2y-4Hg"/>
+                            <constraint firstItem="bdf-EJ-AJn" firstAttribute="bottom" secondItem="SMl-qu-FiZ" secondAttribute="bottom" constant="-34" id="ln1-2y-4Hg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bdf-EJ-AJn"/>
                     </view>
@@ -2251,7 +2251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyV-cx-FOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-745" y="1351"/>
+            <point key="canvasLocation" x="-746.39999999999998" y="1350.7389162561576"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="M1d-49-hMZ">
@@ -2262,7 +2262,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7r-RJ-01d">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration" applicationNameForUserAgent="CoinAudit">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -2274,7 +2274,7 @@
                         <constraints>
                             <constraint firstItem="7CT-9Z-xOP" firstAttribute="trailing" secondItem="m7r-RJ-01d" secondAttribute="trailing" id="A5V-fD-3h1"/>
                             <constraint firstItem="m7r-RJ-01d" firstAttribute="top" secondItem="7CT-9Z-xOP" secondAttribute="top" id="G1g-mr-LR7"/>
-                            <constraint firstItem="7CT-9Z-xOP" firstAttribute="bottom" secondItem="m7r-RJ-01d" secondAttribute="bottom" id="UEA-dZ-dgN"/>
+                            <constraint firstItem="7CT-9Z-xOP" firstAttribute="bottom" secondItem="m7r-RJ-01d" secondAttribute="bottom" constant="-34" id="UEA-dZ-dgN"/>
                             <constraint firstItem="m7r-RJ-01d" firstAttribute="leading" secondItem="7CT-9Z-xOP" secondAttribute="leading" id="VOQ-2L-zzt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7CT-9Z-xOP"/>
@@ -2285,7 +2285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jy0-3W-64Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2279" y="2730"/>
+            <point key="canvasLocation" x="-2279.1999999999998" y="2729.5566502463057"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LLB-Yx-ZIf">

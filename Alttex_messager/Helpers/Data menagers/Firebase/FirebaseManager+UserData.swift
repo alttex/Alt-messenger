@@ -125,7 +125,7 @@ extension FirebaseManager {
                                                          "profileImageURL" : userAccountInfo.profileImageURL,
                                                          "oneTimeNameChangeUsed?" : String(userAccountInfo.oneTimeNameChangeUsed),
                                                          "isAccountCreationCompleted?" : String(userAccountInfo.accountSetupCompleted)]
-        rootRef.child("UserAccounts").child(userAccountInfo.userID).setValue(userAccountDictionary)
+        rootRef.child("users").child(userAccountInfo.userID).setValue(userAccountDictionary)
     }
     
     /**
@@ -136,7 +136,7 @@ extension FirebaseManager {
     func uploadBasicUserInfo(userAccountInfo: UserAccountInfo){
         let userAccountDictionary : [String : String] = ["userID" : userAccountInfo.userID,
                                                          "isAccountCreationCompleted?" : String(userAccountInfo.accountSetupCompleted)]
-        rootRef.child("UserAccounts").child(userAccountInfo.userID).setValue(userAccountDictionary)
+        rootRef.child("users").child(userAccountInfo.userID).setValue(userAccountDictionary)
     }
     
     
