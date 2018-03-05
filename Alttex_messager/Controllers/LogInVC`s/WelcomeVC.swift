@@ -54,7 +54,7 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
         self.loginViewTopConstraint.isActive = true
         self.loginView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.45).isActive = true
         self.loginView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-        self.loginView.layer.cornerRadius = 8
+        self.loginView.layer.cornerRadius = 4
         //RegisterView Customization
         self.view.insertSubview(self.registerView, belowSubview: self.cloudsView)
         self.registerView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
         self.registerTopConstraint.isActive = true
         self.registerView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.6).isActive = true
         self.registerView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-        self.registerView.layer.cornerRadius = 8
+        self.registerView.layer.cornerRadius = 4
     }
     
     

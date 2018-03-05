@@ -27,8 +27,8 @@ class FirebaseManager {
     
     // MARK: - Initializer
     init(){
-        saleRef = rootRef.child("Sale Items")
-        userRef = rootRef.child("UserAccounts")
+        saleRef = rootRef.child("Sale_Items")
+        userRef = rootRef.child("users")
     }
     
     // MARK: - Sale Item Functionality
@@ -122,7 +122,7 @@ class FirebaseManager {
      - parameter saleItemToDelete: the primary ID of the saleItem that will be removed from the FireBase Database
      */
     func deleteSaleItem(saleItemToDelete: SaleItem) {
-        saleRef = rootRef.child("Sale Items")
+        saleRef = rootRef.child("Sale_Items")
         saleRef?.child(saleItemToDelete.itemID!).removeValue()
         deleteImageInFireStorage(imageURL: saleItemToDelete.imageURL!.absoluteString!)
     }

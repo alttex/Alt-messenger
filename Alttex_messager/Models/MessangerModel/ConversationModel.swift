@@ -14,7 +14,7 @@ class Conversation {
     
     //MARK: Properties
     let user: User
-    var lastMessage: Message
+    var lastMessage: MessageChat
     
     //MARK: Methods
     class func showConversations(completion: @escaping ([Conversation]) -> Swift.Void) {
@@ -26,7 +26,7 @@ class Conversation {
                     let values = snapshot.value as! [String: String]
                     let location = values["location"]!
                     User.info(forUserID: fromID, completion: { (user) in
-                        let emptyMessage = Message.init(type: .text, content: "loading", owner: .sender, timestamp: 0, isRead: true)
+                        let emptyMessage = MessageChat.init(type: .text, content: "loading", owner: .sender, timestamp: 0, isRead: true)
                         let conversation = Conversation.init(user: user, lastMessage: emptyMessage)
                         conversations.append(conversation)
                         conversation.lastMessage.downloadLastMessage(forLocation: location, completion: {
@@ -39,7 +39,7 @@ class Conversation {
     }
     
     //MARK: Inits
-    init(user: User, lastMessage: Message) {
+    init(user: User, lastMessage: MessageChat) {
         self.user = user
         self.lastMessage = lastMessage
     }

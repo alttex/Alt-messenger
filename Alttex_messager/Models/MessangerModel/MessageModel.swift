@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class Message {
+class MessageChat {
     
     //MARK: Properties
     var owner: MessageOwner
@@ -23,7 +23,7 @@ class Message {
     private var fromID: String?
     
     //MARK: Methods
-    class func downloadAllMessages(forUserID: String, completion: @escaping (Message) -> Swift.Void) {
+    class func downloadAllMessages(forUserID: String, completion: @escaping (MessageChat) -> Swift.Void) {
         if let currentUserID = Auth.auth().currentUser?.uid {
             Database.database().reference().child("users").child(currentUserID).child("conversations").child(forUserID).observe(.value, with: { (snapshot) in
                 if snapshot.exists() {
@@ -45,10 +45,10 @@ class Message {
                             let fromID = receivedMessage["fromID"] as! String
                             let timestamp = receivedMessage["timestamp"] as! Int
                             if fromID == currentUserID {
-                                let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, isRead: true)
+                                let message = MessageChat.init(type: type, content: content, owner: .receiver, timestamp: timestamp, isRead: true)
                                 completion(message)
                             } else {
-                                let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, isRead: true)
+                                let message = MessageChat.init(type: type, content: content, owner: .sender, timestamp: timestamp, isRead: true)
                                 completion(message)
                             }
                         }
@@ -127,12 +127,12 @@ class Message {
         }
     }
     
-    class func send(message: Message, toID: String, completion: @escaping (Bool) -> Swift.Void)  {
+    class func send(message: MessageChat, toID: String, completion: @escaping (Bool) -> Swift.Void)  {
         if let currentUserID = Auth.auth().currentUser?.uid {
             switch message.type {
             case .location:
                 let values = ["type": "location", "content": message.content, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "isRead": false]
-                Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
+                MessageChat.uploadMessage(withValues: values, toID: toID, completion: { (status) in
                     completion(status)
                 })
             case .photo:
@@ -142,14 +142,14 @@ class Message {
                     if error == nil {
                         let path = metadata?.downloadURL()?.absoluteString
                         let values = ["type": "photo", "content": path!, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "isRead": false] as [String : Any]
-                        Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
+                        MessageChat.uploadMessage(withValues: values, toID: toID, completion: { (status) in
                             completion(status)
                         })
                     }
                 })
             case .text:
                 let values = ["type": "text", "content": message.content, "fromID": currentUserID, "toID": toID, "timestamp": message.timestamp, "isRead": false]
-                Message.uploadMessage(withValues: values, toID: toID, completion: { (status) in
+                MessageChat.uploadMessage(withValues: values, toID: toID, completion: { (status) in
                     completion(status)
                 })
             }

@@ -21,8 +21,8 @@ class RoundedImageView: UIImageView {
 class RoundedButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
-        let radius: CGFloat = self.bounds.size.height / 2.0
-        self.layer.cornerRadius = radius
+        
+        self.layer.cornerRadius = 4
         self.clipsToBounds = true
     }
 }
@@ -36,6 +36,8 @@ extension UIImageView {
         self.layer.mask = mask
     }
 }
+
+
 
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {
