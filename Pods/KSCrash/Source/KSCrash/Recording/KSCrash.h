@@ -172,9 +172,12 @@ typedef enum
 /** Exposes the uncaughtExceptionHandler if set from KSCrash. Is nil if debugger is running. **/
 @property (nonatomic, assign) NSUncaughtExceptionHandler *uncaughtExceptionHandler;
 
+<<<<<<< HEAD
 /** Exposes the currentSnapshotUserReportedExceptionHandler if set from KSCrash. Is nil if debugger is running. **/
 @property (nonatomic, assign) NSUncaughtExceptionHandler *currentSnapshotUserReportedExceptionHandler;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 #pragma mark - Information -
 
 /** Total active time elapsed since the last crash. */
@@ -233,6 +236,7 @@ typedef enum
  */
 - (void) sendAllReportsWithCompletion:(KSCrashReportFilterCompletion) onCompletion;
 
+<<<<<<< HEAD
 /** Get all unsent report IDs.
  *
  * @return An array with report IDs.
@@ -247,16 +251,21 @@ typedef enum
  */
 - (NSDictionary*) reportWithID:(NSNumber*) reportID;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** Delete all unsent reports.
  */
 - (void) deleteAllReports;
 
+<<<<<<< HEAD
 /** Delete report.
  *
  * @param reportID An ID of report to delete.
  */
 - (void) deleteReportWithID:(NSNumber*) reportID;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** Report a custom, user defined exception.
  * This can be useful when dealing with scripting languages.
  *

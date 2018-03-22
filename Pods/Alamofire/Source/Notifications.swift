@@ -48,8 +48,11 @@ extension Notification {
     public struct Key {
         /// User info dictionary key representing the `URLSessionTask` associated with the notification.
         public static let Task = "org.alamofire.notification.key.task"
+<<<<<<< HEAD
 
         /// User info dictionary key representing the responseData associated with the notification.
         public static let ResponseData = "org.alamofire.notification.key.responseData"
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     }
 }

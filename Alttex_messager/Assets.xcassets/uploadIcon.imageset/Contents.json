@@ -2,7 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+<<<<<<< HEAD
       "filename" : "upload product.png",
+=======
+      "filename" : "up-arrow.png",
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
       "scale" : "1x"
     },
     {

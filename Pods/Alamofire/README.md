@@ -15,6 +15,7 @@ Alamofire is an HTTP networking library written in Swift.
 - [Migration Guides](#migration-guides)
 - [Communication](#communication)
 - [Installation](#installation)
+<<<<<<< HEAD
 - [Usage](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md)
     - **Intro -** [Making a Request](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#making-a-request), [Response Handling](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-handling), [Response Validation](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-validation), [Response Caching](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-caching)
 	- **HTTP -** [HTTP Methods](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#http-methods), [Parameter Encoding](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#parameter-encoding), [HTTP Headers](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#http-headers), [Authentication](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#authentication)
@@ -25,6 +26,18 @@ Alamofire is an HTTP networking library written in Swift.
 	- **Routing -** [Routing Requests](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#routing-requests), [Adapting and Retrying Requests](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#adapting-and-retrying-requests)
 	- **Model Objects -** [Custom Response Serialization](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#custom-response-serialization)
 	- **Connection -** [Security](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#security), [Network Reachability](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#network-reachability)
+=======
+- [Usage](Documentation/Usage.md)
+    - **Intro -** [Making a Request](Documentation/Usage.md#making-a-request), [Response Handling](Documentation/Usage.md#response-handling), [Response Validation](Documentation/Usage.md#response-validation), [Response Caching](Documentation/Usage.md#response-caching)
+	- **HTTP -** [HTTP Methods](Documentation/Usage.md#http-methods), [Parameter Encoding](Documentation/Usage.md#parameter-encoding), [HTTP Headers](Documentation/Usage.md#http-headers), [Authentication](Documentation/Usage.md#authentication)
+	- **Large Data -** [Downloading Data to a File](Documentation/Usage.md#downloading-data-to-a-file), [Uploading Data to a Server](Documentation/Usage.md#uploading-data-to-a-server)
+	- **Tools -** [Statistical Metrics](Documentation/Usage.md#statistical-metrics), [cURL Command Output](Documentation/Usage.md#curl-command-output)
+- [Advanced Usage](Documentation/AdvancedUsage.md)
+	- **URL Session -** [Session Manager](Documentation/AdvancedUsage.md#session-manager), [Session Delegate](Documentation/AdvancedUsage.md#session-delegate), [Request](Documentation/AdvancedUsage.md#request)
+	- **Routing -** [Routing Requests](Documentation/AdvancedUsage.md#routing-requests), [Adapting and Retrying Requests](Documentation/AdvancedUsage.md#adapting-and-retrying-requests)
+	- **Model Objects -** [Custom Response Serialization](Documentation/AdvancedUsage.md#custom-response-serialization)
+	- **Connection -** [Security](Documentation/AdvancedUsage.md#security), [Network Reachability](Documentation/AdvancedUsage.md#network-reachability)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 - [Open Radars](#open-radars)
 - [FAQ](#faq)
 - [Credits](#credits)
@@ -94,7 +107,11 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
+<<<<<<< HEAD
     pod 'Alamofire', '~> 4.7'
+=======
+    pod 'Alamofire', '~> 4.5'
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 end
 ```
 
@@ -118,7 +135,11 @@ $ brew install carthage
 To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
+<<<<<<< HEAD
 github "Alamofire/Alamofire" ~> 4.7
+=======
+github "Alamofire/Alamofire" ~> 4.5
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 ```
 
 Run `carthage update` to build the framework and drag the built `Alamofire.framework` into your Xcode project.
@@ -190,7 +211,10 @@ The following radars have some effect on the current implementation of Alamofire
 - [`rdar://21349340`](http://www.openradar.me/radar?id=5517037090635776) - Compiler throwing warning due to toll-free bridging issue in test case
 - `rdar://26870455` - Background URL Session Configurations do not work in the simulator
 - `rdar://26849668` - Some URLProtocol APIs do not properly handle `URLRequest`
+<<<<<<< HEAD
 - [`rdar://36082113`](http://openradar.appspot.com/radar?id=4942308441063424) - `URLSessionTaskMetrics` failing to link on watchOS 3.0+
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 ## Resolved Radars
 
@@ -230,6 +254,11 @@ The [ASF](https://github.com/Alamofire/Foundation#members) is looking to raise m
 
 The community adoption of the ASF libraries has been amazing. We are greatly humbled by your enthusiasm around the projects, and want to continue to do everything we can to move the needle forward. With your continued support, the ASF will be able to improve its reach and also provide better legal safety for the core members. If you use any of our libraries for work, see if your employers would be interested in donating. Our initial goal is to raise $1000 to get all our legal ducks in a row and kickstart this campaign. Any amount you can donate today to help us reach our goal would be greatly appreciated.
 
+<<<<<<< HEAD
+=======
+<a href='https://pledgie.com/campaigns/31474'><img alt='Click here to lend your support to: Alamofire Software Foundation and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31474.png?skin_name=chrome' border='0' ></a>
+
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 ## License
 
 Alamofire is released under the MIT license. [See LICENSE](https://github.com/Alamofire/Alamofire/blob/master/LICENSE) for details.

@@ -13,6 +13,7 @@ target 'Alttex_messager' do
   pod 'SearchTextField'
   pod 'SwiftyStoreKit'
   pod 'Charts'
+<<<<<<< HEAD
   pod 'Firebase/Storage'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
@@ -40,6 +41,18 @@ target 'Alttex_messager' do
   pod 'RealmSwift'
   pod 'BigInt'
   pod 'FloatRatingView', '~> 2.0.0'
+=======
+  pod 'Firebase'
+  pod 'FirebaseCore'
+  pod 'FirebaseDatabase'
+  pod 'FirebaseStorage'
+  pod 'FirebaseAuth'
+  pod 'GoogleSignIn' 
+  pod 'OneSignal'
+  pod 'Sentry'
+   pod 'AlgoliaSearch-Client-Swift'
+
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 end
 

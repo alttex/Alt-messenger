@@ -35,7 +35,10 @@
 #import "NSError+SimpleConstructor.h"
 #import "KSCrashMonitorContext.h"
 #import "KSCrashMonitor_System.h"
+<<<<<<< HEAD
 #import "KSSystemCapabilities.h"
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 //#define KSLogger_LocalLevel TRACE
 #import "KSLogger.h"
@@ -111,7 +114,11 @@ static NSString* getBasePath()
 @synthesize printPreviousLog = _printPreviousLog;
 @synthesize maxReportCount = _maxReportCount;
 @synthesize uncaughtExceptionHandler = _uncaughtExceptionHandler;
+<<<<<<< HEAD
 @synthesize currentSnapshotUserReportedExceptionHandler = _currentSnapshotUserReportedExceptionHandler;
+=======
+
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 // ============================================================================
 #pragma mark - Lifecycle -
@@ -367,11 +374,14 @@ static NSString* getBasePath()
     kscrash_deleteAllReports();
 }
 
+<<<<<<< HEAD
 - (void) deleteReportWithID:(NSNumber*) reportID
 {
     kscrash_deleteReportWithID([reportID longValue]);
 }
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 - (void) reportUserException:(NSString*) name
                       reason:(NSString*) reason
                     language:(NSString*) language
@@ -475,6 +485,7 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
     }
 }
 
+<<<<<<< HEAD
 - (NSArray*)reportIDs
 {
     int reportCount = kscrash_getReportCount();
@@ -494,6 +505,9 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
 }
 
 - (NSDictionary*) reportWithIntID:(int64_t) reportID
+=======
+- (NSDictionary*) reportWithID:(int64_t) reportID
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 {
     NSData* jsonData = [self loadCrashReportJSONWithID:reportID];
     if(jsonData == nil)
@@ -529,7 +543,11 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
     NSMutableArray* reports = [NSMutableArray arrayWithCapacity:(NSUInteger)reportCount];
     for(int i = 0; i < reportCount; i++)
     {
+<<<<<<< HEAD
         NSDictionary* report = [self reportWithIntID:reportIDs[i]];
+=======
+        NSDictionary* report = [self reportWithID:reportIDs[i]];
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
         if(report != nil)
         {
             [reports addObject:report];
@@ -601,7 +619,14 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
 
 
 //! Project version number for KSCrashFramework.
+<<<<<<< HEAD
 const double KSCrashFrameworkVersionNumber = 1.1518;
 
 //! Project version string for KSCrashFramework.
 const unsigned char KSCrashFrameworkVersionString[] = "1.15.18";
+=======
+const double KSCrashFrameworkVersionNumber = 1.1516;
+
+//! Project version string for KSCrashFramework.
+const unsigned char KSCrashFrameworkVersionString[] = "1.15.16";
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d

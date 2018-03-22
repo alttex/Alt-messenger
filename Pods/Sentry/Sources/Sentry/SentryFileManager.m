@@ -162,6 +162,7 @@ NSInteger const maxBreadcrumbs = 200;
 }
 
 - (NSString *)storeDictionary:(NSDictionary *)dictionary toPath:(NSString *)path {
+<<<<<<< HEAD
     @synchronized (self) {
         NSString *finalPath = [path stringByAppendingPathComponent:[self uniqueAcendingJsonName]];
         [SentryLog logWithMessage:[NSString stringWithFormat:@"Writing to file: %@", finalPath] andLevel:kSentryLogLevelDebug];
@@ -172,6 +173,16 @@ NSInteger const maxBreadcrumbs = 200;
             [SentryLog logWithMessage:[NSString stringWithFormat:@"Invalid JSON, failed to write file %@", finalPath]
                              andLevel:kSentryLogLevelError];
         }
+=======
+    if (![NSJSONSerialization isValidJSONObject:dictionary]) {
+        return nil;
+    }
+    NSData *saveData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:nil];
+    @synchronized (self) {
+        NSString *finalPath = [path stringByAppendingPathComponent:[self uniqueAcendingJsonName]];
+        [SentryLog logWithMessage:[NSString stringWithFormat:@"Writing to file: %@", finalPath] andLevel:kSentryLogLevelDebug];
+        [saveData writeToFile:finalPath options:NSDataWritingAtomic error:nil];
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
         return finalPath;
     }
 }

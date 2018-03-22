@@ -14,7 +14,11 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+<<<<<<< HEAD
                BlueprintIdentifier = "4064DBC4887539714E392FD2E3700272"
+=======
+               BlueprintIdentifier = "A25E0667DEFD734C6029D622693B514C"
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
                BuildableName = "Pods_Alttex_messager.framework"
                BlueprintName = "Pods-Alttex_messager"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +51,11 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "4064DBC4887539714E392FD2E3700272"
+=======
+            BlueprintIdentifier = "A25E0667DEFD734C6029D622693B514C"
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
             BuildableName = "Pods_Alttex_messager.framework"
             BlueprintName = "Pods-Alttex_messager"
             ReferencedContainer = "container:Pods.xcodeproj">

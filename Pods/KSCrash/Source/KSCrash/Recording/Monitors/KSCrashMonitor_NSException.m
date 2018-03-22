@@ -57,8 +57,13 @@ static NSUncaughtExceptionHandler* g_previousUncaughtExceptionHandler;
  *
  * @param exception The exception that was raised.
  */
+<<<<<<< HEAD
 
 static void handleException(NSException* exception, BOOL currentSnapshotUserReported) {
+=======
+static void handleException(NSException* exception)
+{
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     KSLOG_DEBUG(@"Trapped exception %@", exception);
     if(g_isEnabled)
     {
@@ -88,19 +93,30 @@ static void handleException(NSException* exception, BOOL currentSnapshotUserRepo
         crashContext->offendingMachineContext = machineContext;
         crashContext->registersAreValid = false;
         crashContext->NSException.name = [[exception name] UTF8String];
+<<<<<<< HEAD
         crashContext->NSException.userInfo = [[NSString stringWithFormat:@"%@", exception.userInfo] UTF8String];
         crashContext->exceptionName = crashContext->NSException.name;
         crashContext->crashReason = [[exception reason] UTF8String];
         crashContext->stackCursor = &cursor;
         crashContext->currentSnapshotUserReported = currentSnapshotUserReported;
+=======
+        crashContext->exceptionName = crashContext->NSException.name;
+        crashContext->crashReason = [[exception reason] UTF8String];
+        crashContext->stackCursor = &cursor;
+
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
         KSLOG_DEBUG(@"Calling main crash handler.");
         kscm_handleException(crashContext);
 
         free(callstack);
+<<<<<<< HEAD
         if (currentSnapshotUserReported) {
             ksmc_resumeEnvironment();
         }
+=======
+
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
         if (g_previousUncaughtExceptionHandler != NULL)
         {
             KSLOG_DEBUG(@"Calling original exception handler.");
@@ -109,6 +125,7 @@ static void handleException(NSException* exception, BOOL currentSnapshotUserRepo
     }
 }
 
+<<<<<<< HEAD
 static void handleCurrentSnapshotUserReportedException(NSException* exception) {
     handleException(exception, true);
 }
@@ -116,6 +133,8 @@ static void handleCurrentSnapshotUserReportedException(NSException* exception) {
 static void handleUncaughtException(NSException* exception) {
     handleException(exception, false);
 }
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 // ============================================================================
 #pragma mark - API -
@@ -132,9 +151,14 @@ static void setEnabled(bool isEnabled)
             g_previousUncaughtExceptionHandler = NSGetUncaughtExceptionHandler();
             
             KSLOG_DEBUG(@"Setting new handler.");
+<<<<<<< HEAD
             NSSetUncaughtExceptionHandler(&handleUncaughtException);
             KSCrash.sharedInstance.uncaughtExceptionHandler = &handleUncaughtException;
             KSCrash.sharedInstance.currentSnapshotUserReportedExceptionHandler = &handleCurrentSnapshotUserReportedException;
+=======
+            NSSetUncaughtExceptionHandler(&handleException);
+            KSCrash.sharedInstance.uncaughtExceptionHandler = &handleException;
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
         }
         else
         {

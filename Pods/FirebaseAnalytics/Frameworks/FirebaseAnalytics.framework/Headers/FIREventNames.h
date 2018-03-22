@@ -55,10 +55,17 @@ static NSString *const kFIREventAddToCart NS_SWIFT_NAME(AnalyticsEventAddToCart)
 static NSString *const kFIREventAddToWishlist NS_SWIFT_NAME(AnalyticsEventAddToWishlist) =
     @"add_to_wishlist";
 
+<<<<<<< HEAD
 /// App Open event. By logging this event when an App becomes active, developers can understand how
 /// often users leave and return during the course of a Session. Although Sessions are automatically
 /// reported, this event can provide further clarification around the continuous engagement of
 /// app-users.
+=======
+/// App Open event. By logging this event when an App is moved to the foreground, developers can
+/// understand how often users leave and return during the course of a Session. Although Sessions
+/// are automatically reported, this event can provide further clarification around the continuous
+/// engagement of app-users.
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 static NSString *const kFIREventAppOpen NS_SWIFT_NAME(AnalyticsEventAppOpen) = @"app_open";
 
 /// E-Commerce Begin Checkout event. This event signifies that a user has begun the process of
@@ -387,6 +394,7 @@ static NSString *const kFIREventViewItemList NS_SWIFT_NAME(AnalyticsEventViewIte
 /// </ul>
 static NSString *const kFIREventViewSearchResults NS_SWIFT_NAME(AnalyticsEventViewSearchResults) =
     @"view_search_results";
+<<<<<<< HEAD
 
 /// Level Start event. Log this event when the user starts a new level. Params:
 ///
@@ -403,3 +411,5 @@ static NSString *const kFIREventLevelStart NS_SWIFT_NAME(AnalyticsEventLevelStar
 ///     <li>@c kFIRParameterSuccess (NSString)</li>
 /// </ul>
 static NSString *const kFIREventLevelEnd NS_SWIFT_NAME(AnalyticsEventLevelEnd) = @"level_end";
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d

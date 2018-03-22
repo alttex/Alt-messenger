@@ -71,7 +71,11 @@ bool ksthread_getQueueName(const KSThread thread, char* const buffer, int bufLen
     }
     
     thread_identifier_info_t idInfo = (thread_identifier_info_t)info;
+<<<<<<< HEAD
     if(!ksmem_isMemoryReadable(idInfo, sizeof(*idInfo)))
+=======
+    if(ksmem_isMemoryReadable(idInfo, sizeof(*idInfo)))
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     {
         KSLOG_DEBUG("Thread %p has an invalid thread identifier info %p", thread, idInfo);
         return false;

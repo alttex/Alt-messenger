@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # v4.5.0
 - Adds new API which provides a way to determine the sign-in methods associated with an
   email address.
@@ -14,6 +15,12 @@
 - Adds an explicit dependency on CoreGraphics from Firebase Auth.
 
 # v4.4.2
+=======
+# v4.4.2
+- Adds an explicit dependency on CoreGraphics from Firebase Auth.
+
+# v4.4.1
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 - Fixes bug where the FIRAuthResult object returned following a Phone Number authentication
   always contained a nil FIRAdditionalUserInfo object. Now the FIRAdditionalUserInfo object is
   never nil and its newUser field is populated correctly.

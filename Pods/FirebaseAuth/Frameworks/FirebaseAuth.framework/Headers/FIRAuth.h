@@ -114,6 +114,7 @@ typedef void (^FIRProviderQueryCallback)(NSArray<NSString *> *_Nullable provider
                                          NSError *_Nullable error)
     NS_SWIFT_NAME(ProviderQueryCallback);
 
+<<<<<<< HEAD
 /** @typedef FIRSignInMethodQueryCallback
     @brief The type of block invoked when a list of sign-in methods for a given email address is
         requested.
@@ -122,6 +123,8 @@ typedef void (^FIRSignInMethodQueryCallback)(NSArray<NSString *> *_Nullable,
                                              NSError *_Nullable)
     NS_SWIFT_NAME(SignInMethodQueryCallback);
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @typedef FIRSendPasswordResetCallback
     @brief The type of block invoked when sending a password reset email.
 
@@ -131,12 +134,15 @@ typedef void (^FIRSignInMethodQueryCallback)(NSArray<NSString *> *_Nullable,
 typedef void (^FIRSendPasswordResetCallback)(NSError *_Nullable error)
     NS_SWIFT_NAME(SendPasswordResetCallback);
 
+<<<<<<< HEAD
 /** @typedef FIRSendSignInLinkToEmailCallback
     @brief The type of block invoked when sending an email sign-in link email.
  */
 typedef void (^FIRSendSignInLinkToEmailCallback)(NSError *_Nullable error)
     NS_SWIFT_NAME(SendSignInLinkToEmailCallback);
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @typedef FIRConfirmPasswordResetCallback
     @brief The type of block invoked when performing a password reset.
 
@@ -204,10 +210,13 @@ typedef NS_ENUM(NSInteger, FIRActionCodeOperation) {
     /** Action code for recover email operation. */
     FIRActionCodeOperationRecoverEmail = 3,
 
+<<<<<<< HEAD
     /** Action code for email link operation. */
     FIRActionCodeOperationEmailLink = 4,
 
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 } NS_SWIFT_NAME(ActionCodeOperation);
 
 /**
@@ -315,6 +324,7 @@ NS_SWIFT_NAME(Auth)
 - (void)fetchProvidersForEmail:(NSString *)email
                     completion:(nullable FIRProviderQueryCallback)completion;
 
+<<<<<<< HEAD
 /** @fn fetchSignInMethodsForEmail:completion:
     @brief Fetches the list of all sign-in methods previously used for the provided email address.
 
@@ -333,6 +343,8 @@ NS_SWIFT_NAME(Auth)
 - (void)fetchSignInMethodsForEmail:(NSString *)email
                         completion:(nullable FIRSignInMethodQueryCallback)completion;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @fn signInWithEmail:password:completion:
     @brief Signs in using an email address and password.
 
@@ -358,6 +370,7 @@ NS_SWIFT_NAME(Auth)
                password:(NSString *)password
              completion:(nullable FIRAuthResultCallback)completion;
 
+<<<<<<< HEAD
 /** @fn signInWithEmail:link:completion:
     @brief Signs in using an email address and email sign-in link.
 
@@ -382,6 +395,8 @@ NS_SWIFT_NAME(Auth)
                    link:(NSString *)link
              completion:(nullable FIRAuthDataResultCallback)completion;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @fn signInAndRetrieveDataWithEmail:password:completion:
     @brief Signs in using an email address and password.
 
@@ -714,6 +729,7 @@ NS_SWIFT_NAME(Auth)
                  actionCodeSettings:(FIRActionCodeSettings *)actionCodeSettings
                          completion:(nullable FIRSendPasswordResetCallback)completion;
 
+<<<<<<< HEAD
 /** @fn sendSignInLinkToEmail:actionCodeSettings:completion:
     @brief Sends a sign in with email link to provided email address.
 
@@ -727,6 +743,8 @@ NS_SWIFT_NAME(Auth)
            actionCodeSettings:(FIRActionCodeSettings *)actionCodeSettings
                    completion:(nullable FIRSendSignInLinkToEmailCallback)completion;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @fn signOut:
     @brief Signs out the current user.
 
@@ -745,6 +763,7 @@ NS_SWIFT_NAME(Auth)
  */
 - (BOOL)signOut:(NSError *_Nullable *_Nullable)error;
 
+<<<<<<< HEAD
 /** @fn isSignInWithEmailLink
     @brief Checks if link is an email sign-in link.
 
@@ -753,6 +772,8 @@ NS_SWIFT_NAME(Auth)
  */
 - (BOOL)isSignInWithEmailLink:(NSString *)link;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @fn addAuthStateDidChangeListener:
     @brief Registers a block as an "auth state did change" listener. To be invoked when:
 

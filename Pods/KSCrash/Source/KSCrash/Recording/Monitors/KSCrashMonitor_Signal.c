@@ -61,7 +61,11 @@ static stack_t g_signalStack = {0};
 /** Signal handlers that were installed before we installed ours. */
 static struct sigaction* g_previousSignalHandlers = NULL;
 
+<<<<<<< HEAD
 static char g_eventID[37];
+=======
+char g_eventID[37];
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 // ============================================================================
 #pragma mark - Callbacks -
@@ -199,9 +203,12 @@ static void uninstallSignalHandler(void)
         sigaction(fatalSignals[i], &g_previousSignalHandlers[i], NULL);
     }
     
+<<<<<<< HEAD
 #if KSCRASH_HAS_SIGNAL_STACK
     g_signalStack = (stack_t){0};
 #endif
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     KSLOG_DEBUG("Signal handlers uninstalled.");
 }
 

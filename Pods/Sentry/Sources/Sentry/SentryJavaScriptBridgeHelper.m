@@ -121,7 +121,11 @@ NS_ASSUME_NONNULL_BEGIN
     event.extra = jsonEvent[@"extra"];
     event.user = [self.class createSentryUserFromJavaScriptUser:jsonEvent[@"user"]];
     if (jsonEvent[@"exception"] || (jsonEvent[@"stacktrace"] && jsonEvent[@"stacktrace"][@"frames"])) {
+<<<<<<< HEAD
         NSArray *jsStacktrace = @[];
+=======
+        NSArray *jsStacktrace = nil;
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
         NSString *exceptionType = @"";
         NSString *exceptionValue = @"";
         if (jsonEvent[@"exception"]) {

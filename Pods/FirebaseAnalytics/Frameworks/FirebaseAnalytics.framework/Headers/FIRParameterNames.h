@@ -483,6 +483,7 @@ static NSString *const kFIRParameterValue NS_SWIFT_NAME(AnalyticsParameterValue)
 /// </pre>
 static NSString *const kFIRParameterVirtualCurrencyName
     NS_SWIFT_NAME(AnalyticsParameterVirtualCurrencyName) = @"virtual_currency_name";
+<<<<<<< HEAD
 
 /// The name of a level in a game (NSString).
 /// <pre>
@@ -503,3 +504,5 @@ static NSString *const kFIRParameterLevelName NS_SWIFT_NAME(AnalyticsParameterLe
 ///     };
 /// </pre>
 static NSString *const kFIRParameterSuccess NS_SWIFT_NAME(AnalyticsParameterSuccess) = @"success";
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d

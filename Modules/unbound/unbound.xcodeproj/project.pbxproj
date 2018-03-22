@@ -1,0 +1,214 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXFileReference section */
+		AB852B102046CDF700C58088 /* ac_pkg_swig.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = ac_pkg_swig.m4; sourceTree = "<group>"; };
+		AB852B112046CDF700C58088 /* aclocal.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = aclocal.m4; sourceTree = "<group>"; };
+		AB852B122046CDF700C58088 /* acx_nlnetlabs.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = acx_nlnetlabs.m4; sourceTree = "<group>"; };
+		AB852B132046CDF700C58088 /* acx_python.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = acx_python.m4; sourceTree = "<group>"; };
+		AB852B142046CDF700C58088 /* ax_pthread.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = ax_pthread.m4; sourceTree = "<group>"; };
+		AB852B152046CDF700C58088 /* cachedb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cachedb; sourceTree = "<group>"; };
+		AB852B162046CDF700C58088 /* compat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = compat; sourceTree = "<group>"; };
+		AB852B172046CDF700C58088 /* config.guess */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = config.guess; sourceTree = "<group>"; };
+		AB852B182046CDF700C58088 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		AB852B192046CDF700C58088 /* config.h.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = config.h.in; sourceTree = "<group>"; };
+		AB852B1A2046CDF700C58088 /* config.sub */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = config.sub; sourceTree = "<group>"; };
+		AB852B1B2046CDF700C58088 /* configure */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = configure; sourceTree = "<group>"; };
+		AB852B1C2046CDF700C58088 /* configure.ac */ = {isa = PBXFileReference; lastKnownFileType = text; path = configure.ac; sourceTree = "<group>"; };
+		AB852B1D2046CDF700C58088 /* contrib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = contrib; sourceTree = "<group>"; };
+		AB852B1E2046CDF700C58088 /* daemon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = daemon; sourceTree = "<group>"; };
+		AB852B1F2046CDF700C58088 /* dns64 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dns64; sourceTree = "<group>"; };
+		AB852B202046CDF700C58088 /* dnscrypt */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dnscrypt; sourceTree = "<group>"; };
+		AB852B212046CDF700C58088 /* dnstap */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dnstap; sourceTree = "<group>"; };
+		AB852B222046CDF700C58088 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
+		AB852B232046CDF700C58088 /* edns-subnet */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "edns-subnet"; sourceTree = "<group>"; };
+		AB852B242046CDF700C58088 /* install-sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "install-sh"; sourceTree = "<group>"; };
+		AB852B252046CDF700C58088 /* iterator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iterator; sourceTree = "<group>"; };
+		AB852B262046CDF700C58088 /* libunbound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libunbound; sourceTree = "<group>"; };
+		AB852B272046CDF700C58088 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		AB852B282046CDF700C58088 /* ltmain.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ltmain.sh; sourceTree = "<group>"; };
+		AB852B292046CDF700C58088 /* makedist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = makedist.sh; sourceTree = "<group>"; };
+		AB852B2A2046CDF700C58088 /* Makefile.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		AB852B2B2046CDF700C58088 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		AB852B2C2046CDF700C58088 /* pythonmod */ = {isa = PBXFileReference; lastKnownFileType = folder; path = pythonmod; sourceTree = "<group>"; };
+		AB852B2D2046CDF700C58088 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		AB852B2E2046CDF700C58088 /* respip */ = {isa = PBXFileReference; lastKnownFileType = folder; path = respip; sourceTree = "<group>"; };
+		AB852B2F2046CDF700C58088 /* services */ = {isa = PBXFileReference; lastKnownFileType = folder; path = services; sourceTree = "<group>"; };
+		AB852B302046CDF700C58088 /* sldns */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sldns; sourceTree = "<group>"; };
+		AB852B312046CDF700C58088 /* smallapp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = smallapp; sourceTree = "<group>"; };
+		AB852B322046CDF700C58088 /* systemd.m4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = systemd.m4; sourceTree = "<group>"; };
+		AB852B332046CDF700C58088 /* testcode */ = {isa = PBXFileReference; lastKnownFileType = folder; path = testcode; sourceTree = "<group>"; };
+		AB852B342046CDF700C58088 /* testdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = testdata; sourceTree = "<group>"; };
+		AB852B352046CDF700C58088 /* util */ = {isa = PBXFileReference; lastKnownFileType = folder; path = util; sourceTree = "<group>"; };
+		AB852B362046CDF700C58088 /* validator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = validator; sourceTree = "<group>"; };
+		AB852B372046CDF700C58088 /* winrc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = winrc; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		AB852B0A2046CDF700C58088 = {
+			isa = PBXGroup;
+			children = (
+				AB852B102046CDF700C58088 /* ac_pkg_swig.m4 */,
+				AB852B112046CDF700C58088 /* aclocal.m4 */,
+				AB852B122046CDF700C58088 /* acx_nlnetlabs.m4 */,
+				AB852B132046CDF700C58088 /* acx_python.m4 */,
+				AB852B142046CDF700C58088 /* ax_pthread.m4 */,
+				AB852B152046CDF700C58088 /* cachedb */,
+				AB852B162046CDF700C58088 /* compat */,
+				AB852B172046CDF700C58088 /* config.guess */,
+				AB852B182046CDF700C58088 /* config.h */,
+				AB852B192046CDF700C58088 /* config.h.in */,
+				AB852B1A2046CDF700C58088 /* config.sub */,
+				AB852B1B2046CDF700C58088 /* configure */,
+				AB852B1C2046CDF700C58088 /* configure.ac */,
+				AB852B1D2046CDF700C58088 /* contrib */,
+				AB852B1E2046CDF700C58088 /* daemon */,
+				AB852B1F2046CDF700C58088 /* dns64 */,
+				AB852B202046CDF700C58088 /* dnscrypt */,
+				AB852B212046CDF700C58088 /* dnstap */,
+				AB852B222046CDF700C58088 /* doc */,
+				AB852B232046CDF700C58088 /* edns-subnet */,
+				AB852B242046CDF700C58088 /* install-sh */,
+				AB852B252046CDF700C58088 /* iterator */,
+				AB852B262046CDF700C58088 /* libunbound */,
+				AB852B272046CDF700C58088 /* LICENSE */,
+				AB852B282046CDF700C58088 /* ltmain.sh */,
+				AB852B292046CDF700C58088 /* makedist.sh */,
+				AB852B2A2046CDF700C58088 /* Makefile.in */,
+				AB852B2B2046CDF700C58088 /* module.modulemap */,
+				AB852B2C2046CDF700C58088 /* pythonmod */,
+				AB852B2D2046CDF700C58088 /* README */,
+				AB852B2E2046CDF700C58088 /* respip */,
+				AB852B2F2046CDF700C58088 /* services */,
+				AB852B302046CDF700C58088 /* sldns */,
+				AB852B312046CDF700C58088 /* smallapp */,
+				AB852B322046CDF700C58088 /* systemd.m4 */,
+				AB852B332046CDF700C58088 /* testcode */,
+				AB852B342046CDF700C58088 /* testdata */,
+				AB852B352046CDF700C58088 /* util */,
+				AB852B362046CDF700C58088 /* validator */,
+				AB852B372046CDF700C58088 /* winrc */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		AB852B0F2046CDF700C58088 /* unbound */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = AB852B382046CDF700C58088 /* Build configuration list for PBXLegacyTarget "unbound" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/vlad.impeg/Desktop/Alttex_messager/Modules/unbound;
+			dependencies = (
+			);
+			name = unbound;
+			passBuildSettingsInEnvironment = 1;
+			productName = unbound;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		AB852B0B2046CDF700C58088 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = AB852B0E2046CDF700C58088 /* Build configuration list for PBXProject "unbound" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AB852B0A2046CDF700C58088;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB852B0F2046CDF700C58088 /* unbound */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		AB852B0C2046CDF700C58088 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		AB852B0D2046CDF700C58088 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		AB852B392046CDF700C58088 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = unbound;
+			};
+			name = Debug;
+		};
+		AB852B3A2046CDF700C58088 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = unbound;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB852B0E2046CDF700C58088 /* Build configuration list for PBXProject "unbound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB852B0C2046CDF700C58088 /* Debug */,
+				AB852B0D2046CDF700C58088 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB852B382046CDF700C58088 /* Build configuration list for PBXLegacyTarget "unbound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB852B392046CDF700C58088 /* Debug */,
+				AB852B3A2046CDF700C58088 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB852B0B2046CDF700C58088 /* Project object */;
+}

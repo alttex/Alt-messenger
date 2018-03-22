@@ -25,11 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 extern NSString *const FIRFacebookAuthProviderID NS_SWIFT_NAME(FacebookAuthProviderID);
 
+<<<<<<< HEAD
 /**
     @brief A string constant identifying the Facebook sign-in method.
  */
 extern NSString *const _Nonnull FIRFacebookAuthSignInMethod NS_SWIFT_NAME(FacebookAuthSignInMethod);
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @class FIRFacebookAuthProvider
     @brief Utility class for constructing Facebook credentials.
  */

@@ -46,11 +46,19 @@ public class SwiftyStoreKit {
         return productsInfoController.retrieveProductsInfo(productIds, completion: completion)
     }
     
+<<<<<<< HEAD
     fileprivate func purchaseProduct(_ productId: String, quantity: Int = 1, atomically: Bool = true, applicationUsername: String = "", simulatesAskToBuyInSandbox: Bool = false, completion: @escaping ( PurchaseResult) -> Void) {
 
         retrieveProductsInfo(Set([productId])) { result -> Void in
             if let product = result.retrievedProducts.first {
                 self.purchase(product: product, quantity: quantity, atomically: atomically, applicationUsername: applicationUsername, simulatesAskToBuyInSandbox: simulatesAskToBuyInSandbox, completion: completion)
+=======
+    fileprivate func purchaseProduct(_ productId: String, quantity: Int = 1, atomically: Bool = true, applicationUsername: String = "", completion: @escaping ( PurchaseResult) -> Void) {
+
+        retrieveProductsInfo(Set([productId])) { result -> Void in
+            if let product = result.retrievedProducts.first {
+                self.purchase(product: product, quantity: quantity, atomically: atomically, applicationUsername: applicationUsername, completion: completion)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
             } else if let error = result.error {
                 completion(.error(error: SKError(_nsError: error as NSError)))
             } else if let invalidProductId = result.invalidProductIDs.first {
@@ -61,14 +69,22 @@ public class SwiftyStoreKit {
         }
     }
 
+<<<<<<< HEAD
     fileprivate func purchase(product: SKProduct, quantity: Int, atomically: Bool, applicationUsername: String = "", simulatesAskToBuyInSandbox: Bool = false, completion: @escaping (PurchaseResult) -> Void) {
+=======
+    fileprivate func purchase(product: SKProduct, quantity: Int, atomically: Bool, applicationUsername: String = "", completion: @escaping (PurchaseResult) -> Void) {
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
         guard SwiftyStoreKit.canMakePayments else {
             let error = NSError(domain: SKErrorDomain, code: SKError.paymentNotAllowed.rawValue, userInfo: nil)
             completion(.error(error: SKError(_nsError: error)))
             return
         }
         
+<<<<<<< HEAD
         paymentQueueController.startPayment(Payment(product: product, quantity: quantity, atomically: atomically, applicationUsername: applicationUsername, simulatesAskToBuyInSandbox: simulatesAskToBuyInSandbox) { result in
+=======
+        paymentQueueController.startPayment(Payment(product: product, quantity: quantity, atomically: atomically, applicationUsername: applicationUsername) { result in
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
             
             completion(self.processPurchaseResult(result))
         })
@@ -159,9 +175,15 @@ extension SwiftyStoreKit {
      *  - Parameter applicationUsername: an opaque identifier for the user’s account on your system
      *  - Parameter completion: handler for result
      */
+<<<<<<< HEAD
     public class func purchaseProduct(_ productId: String, quantity: Int = 1, atomically: Bool = true, applicationUsername: String = "", simulatesAskToBuyInSandbox: Bool = false, completion: @escaping (PurchaseResult) -> Void) {
 
         sharedInstance.purchaseProduct(productId, quantity: quantity, atomically: atomically, applicationUsername: applicationUsername, simulatesAskToBuyInSandbox: simulatesAskToBuyInSandbox, completion: completion)
+=======
+    public class func purchaseProduct(_ productId: String, quantity: Int = 1, atomically: Bool = true, applicationUsername: String = "", completion: @escaping (PurchaseResult) -> Void) {
+
+        sharedInstance.purchaseProduct(productId, quantity: quantity, atomically: atomically, applicationUsername: applicationUsername, completion: completion)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     }
     
     /**
@@ -172,9 +194,15 @@ extension SwiftyStoreKit {
      *  - Parameter applicationUsername: an opaque identifier for the user’s account on your system
      *  - Parameter completion: handler for result
      */
+<<<<<<< HEAD
     public class func purchaseProduct(_ product: SKProduct, quantity: Int = 1, atomically: Bool = true, applicationUsername: String = "", simulatesAskToBuyInSandbox: Bool = false, completion: @escaping ( PurchaseResult) -> Void) {
         
         sharedInstance.purchase(product: product, quantity: quantity, atomically: atomically, applicationUsername: applicationUsername, simulatesAskToBuyInSandbox: simulatesAskToBuyInSandbox, completion: completion)
+=======
+    public class func purchaseProduct(_ product: SKProduct, quantity: Int = 1, atomically: Bool = true, applicationUsername: String = "", completion: @escaping ( PurchaseResult) -> Void) {
+        
+        sharedInstance.purchase(product: product, quantity: quantity, atomically: atomically, applicationUsername: applicationUsername, completion: completion)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     }
 
     /**

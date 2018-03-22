@@ -1,4 +1,5 @@
 PODS:
+<<<<<<< HEAD
   - Alamofire (4.7.0)
   - AlgoliaSearch-Client-Swift (5.1.6)
   - BigInt (3.0.1):
@@ -60,22 +61,47 @@ PODS:
     - FirebaseCore (~> 4.0)
     - Protobuf (~> 3.1)
   - FirebaseAnalytics (4.1.0):
+=======
+  - Alamofire (4.6.0)
+  - AlgoliaSearch-Client-Swift (5.1.2)
+  - Charts (3.0.5):
+    - Charts/Core (= 3.0.5)
+  - Charts/Core (3.0.5)
+  - Firebase (4.9.0):
+    - Firebase/Core (= 4.9.0)
+  - Firebase/Core (4.9.0):
+    - FirebaseAnalytics (= 4.0.9)
+    - FirebaseCore (= 4.0.15)
+  - FirebaseAnalytics (4.0.9):
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
+<<<<<<< HEAD
   - FirebaseAuth (4.5.0):
     - FirebaseAnalytics (~> 4.1)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.18):
+=======
+  - FirebaseAuth (4.4.3):
+    - FirebaseAnalytics (~> 4.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (4.0.15):
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (4.1.5):
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
+<<<<<<< HEAD
   - FirebaseFirestore (0.10.4):
     - FirebaseAnalytics (~> 4.1)
+=======
+  - FirebaseInstanceID (2.0.9):
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     - FirebaseCore (~> 4.0)
     - gRPC-ProtoRPC (~> 1.0)
     - leveldb-library (~> 1.18)
@@ -93,6 +119,7 @@ PODS:
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
+<<<<<<< HEAD
   - FirebaseUI (4.5.5):
     - FirebaseUI/All (= 4.5.5)
   - FirebaseUI/All (4.5.5):
@@ -135,6 +162,8 @@ PODS:
     - GooglePlaces (= 2.6.0)
   - GooglePlaces (2.6.0):
     - GoogleMaps/Base (= 2.6.0)
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   - GoogleSignIn (4.1.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -199,6 +228,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+<<<<<<< HEAD
   - OneSignal (2.8.1)
   - Protobuf (3.5.0)
   - Realm (3.3.0):
@@ -209,6 +239,9 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+=======
+  - OneSignal (2.7.0)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   - SearchTextField (1.2.0)
   - Sentry (3.12.0):
     - Sentry/Core (= 3.12.0)
@@ -228,6 +261,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlgoliaSearch-Client-Swift
+<<<<<<< HEAD
   - BigInt
   - Charts
   - FacebookCore
@@ -243,6 +277,14 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+=======
+  - Charts
+  - Firebase
+  - FirebaseAuth
+  - FirebaseCore
+  - FirebaseDatabase
+  - FirebaseStorage
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   - GoogleSignIn
   - Hue
   - ImagePicker
@@ -258,6 +300,7 @@ DEPENDENCIES:
   - SwiftyStoreKit
 
 SPEC CHECKSUMS:
+<<<<<<< HEAD
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlgoliaSearch-Client-Swift: cd60a80007f00923b37a14ff03af96889083111d
   BigInt: 8e8a52161c745cd3ab78e3dc346a9fbee51e6cf6
@@ -286,6 +329,18 @@ SPEC CHECKSUMS:
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
   GooglePlacePicker: e4488625effb006f59de49e14b7a603e463e4261
   GooglePlaces: f6ddf33b75cef69e888907d9947c57198ed845f3
+=======
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlgoliaSearch-Client-Swift: 6c88667420b02e57c24dc54cfcfa71848980c495
+  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
+  Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
+  FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
+  FirebaseAuth: aaaf68d5064a6c8fec435758f83a43b8db26ccaa
+  FirebaseCore: 3bd047463058fa6b5d312c97502c52e45401cdfb
+  FirebaseDatabase: de4446507ccd3257fca37d16f40e1540324571fd
+  FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
+  FirebaseStorage: 181bb543d39ee3c53e0558de7ba86b1286a0427f
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   gRPC: f54f0e6d603052b4562447da442ce2ff30bcdacc
@@ -301,11 +356,15 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   Lightbox: 2dc267df8be2285bc7724cb11cbbf4aaaf59dced
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+<<<<<<< HEAD
   OneSignal: 7dfd61c1ea88571ddf772c53c7ae45407c5eb2f7
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
   RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+=======
+  OneSignal: b28d78085a4e04327e6732846ab03521d3496e72
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
   Sentry: 74233cedacdd605a8eec77ede4eaacc5afe16b5c
   SipHash: c6e9e43e9c531b5bc6602545130c26194a6d31ce
@@ -316,6 +375,10 @@ SPEC CHECKSUMS:
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
+<<<<<<< HEAD
 PODFILE CHECKSUM: 9d53564d7c82479e6a5b592426e429380f3bd092
+=======
+PODFILE CHECKSUM: c1decd1bc4386254ce56e6c7cc5b654401cef952
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 COCOAPODS: 1.4.0

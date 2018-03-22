@@ -5,7 +5,11 @@
  *
  *  The scope to be used when fetching/deleting a token for Firebase Messaging.
  */
+<<<<<<< HEAD
 FOUNDATION_EXPORT NSString *__nonnull const kFIRInstanceIDScopeFirebaseMessaging
+=======
+FOUNDATION_EXPORT NSString * __nonnull const kFIRInstanceIDScopeFirebaseMessaging
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     NS_SWIFT_NAME(InstanceIDScopeFirebaseMessaging);
 
 #if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
@@ -28,7 +32,11 @@ FOUNDATION_EXPORT const NSNotificationName __nonnull kFIRInstanceIDTokenRefreshN
  *  Instance ID service will throttle the refresh event across all devices
  *  to control the rate of token updates on application servers.
  */
+<<<<<<< HEAD
 FOUNDATION_EXPORT NSString *__nonnull const kFIRInstanceIDTokenRefreshNotification
+=======
+FOUNDATION_EXPORT NSString * __nonnull const kFIRInstanceIDTokenRefreshNotification
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     NS_SWIFT_NAME(InstanceIDTokenRefreshNotification);
 #endif  // defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
@@ -44,9 +52,16 @@ FOUNDATION_EXPORT NSString *__nonnull const kFIRInstanceIDTokenRefreshNotificati
  *               failed. See the error codes below for a more detailed
  *               description.
  */
+<<<<<<< HEAD
 typedef void (^FIRInstanceIDTokenHandler)(NSString *__nullable token, NSError *__nullable error)
     NS_SWIFT_NAME(InstanceIDTokenHandler);
 
+=======
+typedef void(^FIRInstanceIDTokenHandler)( NSString * __nullable token, NSError * __nullable error)
+    NS_SWIFT_NAME(InstanceIDTokenHandler);
+
+
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /**
  *  @related FIRInstanceID
  *
@@ -56,7 +71,11 @@ typedef void (^FIRInstanceIDTokenHandler)(NSString *__nullable token, NSError *_
  *  @param error The error describing why deleting the token failed.
  *               See the error codes below for a more detailed description.
  */
+<<<<<<< HEAD
 typedef void (^FIRInstanceIDDeleteTokenHandler)(NSError *__nullable error)
+=======
+typedef void(^FIRInstanceIDDeleteTokenHandler)(NSError * __nullable error)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     NS_SWIFT_NAME(InstanceIDDeleteTokenHandler);
 
 /**
@@ -69,7 +88,11 @@ typedef void (^FIRInstanceIDDeleteTokenHandler)(NSError *__nullable error)
  *                  while creating an identity.
  *  @param error    The error if fetching the identity fails else nil.
  */
+<<<<<<< HEAD
 typedef void (^FIRInstanceIDHandler)(NSString *__nullable identity, NSError *__nullable error)
+=======
+typedef void(^FIRInstanceIDHandler)(NSString * __nullable identity, NSError * __nullable error)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     NS_SWIFT_NAME(InstanceIDHandler);
 
 /**
@@ -81,7 +104,11 @@ typedef void (^FIRInstanceIDHandler)(NSString *__nullable identity, NSError *__n
  *  @param error The error if deleting the identity and all the tokens associated with
  *               it fails else nil.
  */
+<<<<<<< HEAD
 typedef void (^FIRInstanceIDDeleteHandler)(NSError *__nullable error)
+=======
+typedef void(^FIRInstanceIDDeleteHandler)(NSError * __nullable error)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     NS_SWIFT_NAME(InstanceIDDeleteHandler);
 
 /**
@@ -132,10 +159,13 @@ typedef NS_ENUM(NSInteger, FIRInstanceIDAPNSTokenType) {
  *  Instance ID provides a unique identifier for each app instance and a mechanism
  *  to authenticate and authorize actions (for example, sending an FCM message).
  *
+<<<<<<< HEAD
  *  Once an InstanceID is generated, the library periodically sends information about the
  *  application and the device where it's running to the Firebase backend. To stop this. see
  *  `[FIRInstanceID deleteIDWithHandler:]`.
  *
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
  *  Instance ID is long lived but, may be reset if the device is not used for
  *  a long time or the Instance ID service detects a problem.
  *  If Instance ID is reset, the app will be notified via
@@ -174,15 +204,24 @@ NS_SWIFT_NAME(InstanceID)
  */
 - (void)setAPNSToken:(nonnull NSData *)token
                 type:(FIRInstanceIDAPNSTokenType)type
+<<<<<<< HEAD
     __deprecated_msg("Use FIRMessaging's APNSToken property instead.");
+=======
+      __deprecated_msg("Use FIRMessaging's APNSToken property instead.");
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 #pragma mark - Tokens
 
 /**
  *  Returns a Firebase Messaging scoped token for the firebase app.
  *
+<<<<<<< HEAD
  *  @return Returns the stored token if the device has registered with Firebase Messaging, otherwise
  *          returns nil.
+=======
+ *  @return Null Returns null if the device has not yet been registerd with
+ *          Firebase Message else returns a valid token.
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
  */
 - (nullable NSString *)token;
 
@@ -197,9 +236,12 @@ NS_SWIFT_NAME(InstanceID)
  *  we invoke the completion callback with nil `token` and the appropriate
  *  error.
  *
+<<<<<<< HEAD
  *  This generates an Instance ID if it does not exist yet, which starts periodically sending
  *  information to the Firebase backend (see `[FIRInstanceID getIDWithHandler:]`).
  *
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
  *  Note, you can only have one `token` or `deleteToken` call for a given
  *  authorizedEntity and scope at any point of time. Making another such call with the
  *  same authorizedEntity and scope before the last one finishes will result in an
@@ -260,16 +302,24 @@ NS_SWIFT_NAME(InstanceID)
  *  instance. If the identifier has been revoked or has expired, this method will
  *  return a new identifier.
  *
+<<<<<<< HEAD
  *  Once an InstanceID is generated, the library periodically sends information about the
  *  application and the device where it's running to the Firebase backend. To stop this. see
  *  `[FIRInstanceID deleteIDWithHandler:]`.
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
  *
  *  @param handler The handler to invoke once the identifier has been fetched.
  *                 In case of error an appropriate error object is returned else
  *                 a valid identifier is returned and a valid identifier for the
  *                 application instance.
  */
+<<<<<<< HEAD
 - (void)getIDWithHandler:(nonnull FIRInstanceIDHandler)handler NS_SWIFT_NAME(getID(handler:));
+=======
+- (void)getIDWithHandler:(nonnull FIRInstanceIDHandler)handler
+    NS_SWIFT_NAME(getID(handler:));
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 /**
  *  Resets Instance ID and revokes all tokens.
@@ -277,11 +327,14 @@ NS_SWIFT_NAME(InstanceID)
  *  This method also triggers a request to fetch a new Instance ID and Firebase Messaging scope
  *  token. Please listen to kFIRInstanceIDTokenRefreshNotification when the new ID and token are
  *  ready.
+<<<<<<< HEAD
  *
  *  This stops the periodic sending of data to the Firebase backend that began when the Instance ID
  *  was generated. No more data is sent until another library calls Instance ID internally again
  *  (like FCM, RemoteConfig or Analytics) or user explicitly calls Instance ID APIs to get an
  *  Instance ID and token again.
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
  */
 - (void)deleteIDWithHandler:(nonnull FIRInstanceIDDeleteHandler)handler
     NS_SWIFT_NAME(deleteID(handler:));

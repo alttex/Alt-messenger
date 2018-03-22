@@ -84,6 +84,7 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+<<<<<<< HEAD
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle"
@@ -108,6 +109,12 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle"
   install_resource "${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle"
+=======
+  install_resource "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

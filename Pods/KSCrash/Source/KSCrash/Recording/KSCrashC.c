@@ -60,7 +60,11 @@ static volatile bool g_installed = 0;
 
 static bool g_shouldAddConsoleLogToReport = false;
 static bool g_shouldPrintPreviousLog = false;
+<<<<<<< HEAD
 static char g_consoleLogPath[KSFU_MAX_PATH_LENGTH];
+=======
+char g_consoleLogPath[KSFU_MAX_PATH_LENGTH];
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 static KSCrashMonitorType g_monitoring = KSCrashMonitorTypeProductionSafeMinimal;
 static char g_lastCrashReportFilePath[KSFU_MAX_PATH_LENGTH];
 
@@ -93,10 +97,16 @@ static void printPreviousLog(const char* filePath)
  */
 static void onCrash(struct KSCrash_MonitorContext* monitorContext)
 {
+<<<<<<< HEAD
     if (monitorContext->currentSnapshotUserReported == false) {
         KSLOG_DEBUG("Updating application state to note crash.");
         kscrashstate_notifyAppCrash();
     }
+=======
+    KSLOG_DEBUG("Updating application state to note crash.");
+    kscrashstate_notifyAppCrash();
+
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     monitorContext->consoleLogPath = g_shouldAddConsoleLogToReport ? g_consoleLogPath : NULL;
 
     if(monitorContext->crashedDuringCrashHandling)
@@ -294,8 +304,11 @@ void kscrash_deleteAllReports()
 {
     kscrs_deleteAllReports();
 }
+<<<<<<< HEAD
 
 void kscrash_deleteReportWithID(int64_t reportID)
 {
     kscrs_deleteReportWithID(reportID);
 }
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d

@@ -105,7 +105,11 @@ static Monitor g_monitors[] =
 };
 static int g_monitorsCount = sizeof(g_monitors) / sizeof(*g_monitors);
 
+<<<<<<< HEAD
 static KSCrashMonitorType g_activeMonitors = KSCrashMonitorTypeNone;
+=======
+KSCrashMonitorType g_activeMonitors = KSCrashMonitorTypeNone;
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 static bool g_handlingFatalException = false;
 static bool g_crashedDuringExceptionHandling = false;
@@ -246,6 +250,7 @@ void kscm_handleException(struct KSCrash_MonitorContext* context)
 
     g_onExceptionEvent(context);
 
+<<<<<<< HEAD
     if (context->currentSnapshotUserReported) {
         g_handlingFatalException = false;
     } else {
@@ -253,5 +258,11 @@ void kscm_handleException(struct KSCrash_MonitorContext* context)
             KSLOG_DEBUG("Exception is fatal. Restoring original handlers.");
             kscm_setActiveMonitors(KSCrashMonitorTypeNone);
         }
+=======
+    if(g_handlingFatalException && !g_crashedDuringExceptionHandling)
+    {
+        KSLOG_DEBUG("Exception is fatal. Restoring original handlers.");
+        kscm_setActiveMonitors(KSCrashMonitorTypeNone);
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     }
 }

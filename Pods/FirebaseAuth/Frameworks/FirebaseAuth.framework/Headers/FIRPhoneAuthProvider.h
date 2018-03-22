@@ -27,12 +27,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 extern NSString *const FIRPhoneAuthProviderID NS_SWIFT_NAME(PhoneAuthProviderID);
 
+<<<<<<< HEAD
 /** @var FIRPhoneAuthProviderID
     @brief A string constant identifying the phone sign-in method.
  */
 extern NSString *const _Nonnull FIRPhoneAuthSignInMethod NS_SWIFT_NAME(PhoneAuthSignInMethod);
 
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @typedef FIRVerificationResultCallback
     @brief The type of block invoked when a request to send a verification code has finished.
 

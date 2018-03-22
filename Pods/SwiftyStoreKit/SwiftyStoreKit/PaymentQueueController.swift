@@ -121,6 +121,7 @@ class PaymentQueueController: NSObject, SKPaymentTransactionObserver {
         let skPayment = SKMutablePayment(product: payment.product)
         skPayment.applicationUsername = payment.applicationUsername
         skPayment.quantity = payment.quantity
+<<<<<<< HEAD
         
 #if os(iOS) || os(tvOS)
         if #available(iOS 8.3, tvOS 9.0, *) {
@@ -128,6 +129,8 @@ class PaymentQueueController: NSObject, SKPaymentTransactionObserver {
         }
 #endif
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
         paymentQueue.add(skPayment)
 
         paymentsController.append(payment)

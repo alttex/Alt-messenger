@@ -7,7 +7,41 @@
 		<key>Alttex_messager.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>47</integer>
+=======
+			<integer>16</integer>
+		</dict>
+		<key>BRCore.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>Libbz2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
+		<key>libbz2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>nettie.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>sqlite3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
+		</dict>
+		<key>umbound.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
 		</dict>
 	</dict>
 </dict>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [![Build Status](https://www.bitrise.io/app/6dcd3d9dd961c466/status.svg?token=q1GX8YovgWTvPx7Ueu77JQ)](https://www.bitrise.io/app/6dcd3d9dd961c466)
+=======
+[![Build Status](https://travis-ci.org/algolia/algoliasearch-client-swift.svg?branch=master)](https://travis-ci.org/algolia/algoliasearch-client-swift)
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swift.org/package-manager/)
 [![CocoaPods](https://img.shields.io/cocoapods/v/AlgoliaSearch-Client-Swift.svg)]()

@@ -361,12 +361,17 @@ static NSString* getReceiptUrlPath()
     NSString* path = nil;
 #if KSCRASH_HOST_IOS
     // For iOS 6 compatibility
+<<<<<<< HEAD
 #ifdef __IPHONE_11_0
     if (@available(iOS 7, *)) {
 #else
     if ([[UIDevice currentDevice].systemVersion compare:@"7" options:NSNumericSearch] != NSOrderedAscending) {
 #endif
 #endif
+=======
+    if ([[UIDevice currentDevice].systemVersion compare:@"7" options:NSNumericSearch] != NSOrderedAscending) {
+#endif
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
         path = [NSBundle mainBundle].appStoreReceiptURL.path;
 #if KSCRASH_HOST_IOS
     }

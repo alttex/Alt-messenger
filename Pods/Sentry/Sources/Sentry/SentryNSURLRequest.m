@@ -83,6 +83,7 @@ NSTimeInterval const SentryRequestTimeout = 15;
 
 + (NSURL *)getStoreUrlFromDsn:(SentryDsn *)dsn {
     NSURL *url = dsn.url;
+<<<<<<< HEAD
     NSString *projectId = url.lastPathComponent;
     NSMutableArray *paths = [url.pathComponents mutableCopy];
     // [0] = /
@@ -95,11 +96,18 @@ NSTimeInterval const SentryRequestTimeout = 15;
         [paths removeLastObject]; // We remove projectId since we add it later
         path = [NSString stringWithFormat:@"/%@", [paths componentsJoinedByString:@"/"]]; // We put together the path
     }
+=======
+    NSString *projectId = url.pathComponents[1];
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     NSURLComponents *components = [NSURLComponents new];
     components.scheme = url.scheme;
     components.host = url.host;
     components.port = url.port;
+<<<<<<< HEAD
     components.path = [NSString stringWithFormat:@"%@/api/%@/store/", path, projectId];
+=======
+    components.path = [NSString stringWithFormat:@"/api/%@/store/", projectId];
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     return components.URL;
 }
 

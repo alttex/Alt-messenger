@@ -29,10 +29,13 @@
     #import <FirebaseFirestore/FirebaseFirestore.h>
   #endif
 
+<<<<<<< HEAD
   #if __has_include(<FirebaseFunctions/FirebaseFunctions.h>)
     #import <FirebaseFunctions/FirebaseFunctions.h>
   #endif
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   #if __has_include(<FirebaseInstanceID/FirebaseInstanceID.h>)
     #import <FirebaseInstanceID/FirebaseInstanceID.h>
   #endif

@@ -25,12 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 extern NSString *const FIRTwitterAuthProviderID NS_SWIFT_NAME(TwitterAuthProviderID);
 
+<<<<<<< HEAD
 /**
     @brief A string constant identifying the Twitter sign-in method.
  */
 extern NSString *const _Nonnull FIRTwitterAuthSignInMethod NS_SWIFT_NAME(TwitterAuthSignInMethod);
 
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @class FIRTwitterAuthProvider
     @brief Utility class for constructing Twitter credentials.
  */

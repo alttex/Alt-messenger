@@ -6,14 +6,20 @@ mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
 SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 
+<<<<<<< HEAD
 # Used as a return value for each invocation of `strip_invalid_archs` function.
 STRIP_BINARY_RETVAL=0
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 # This protects against multiple targets copying the same framework dependency at the same time. The solution
 # was originally proposed here: https://lists.samba.org/archive/rsync/2008-February/020158.html
 RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 
+<<<<<<< HEAD
 # Copies and strips a vendored framework
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 install_framework()
 {
   if [ -r "${BUILT_PRODUCTS_DIR}/$1" ]; then
@@ -62,6 +68,7 @@ install_framework()
   fi
 }
 
+<<<<<<< HEAD
 # Copies and strips a vendored dSYM
 install_dsym() {
   local source="$1"
@@ -87,6 +94,14 @@ install_dsym() {
       # The dSYM was not stripped at all, in this case touch a fake folder so the input/output paths from Xcode do not reexecute this script because the file is missing.
       touch "${DWARF_DSYM_FOLDER_PATH}/${basename}.framework.dSYM"
     fi
+=======
+# Copies the dSYM of a vendored framework
+install_dsym() {
+  local source="$1"
+  if [ -r "$source" ]; then
+    echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${DWARF_DSYM_FOLDER_PATH}\""
+    rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${DWARF_DSYM_FOLDER_PATH}"
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   fi
 }
 
@@ -108,6 +123,7 @@ code_sign_if_enabled() {
 # Strip invalid architectures
 strip_invalid_archs() {
   binary="$1"
+<<<<<<< HEAD
   # Get architectures for current target binary
   binary_archs="$(lipo -info "$binary" | rev | cut -d ':' -f1 | awk '{$1=$1;print}' | rev)"
   # Intersect them with the architectures we are building for
@@ -120,6 +136,12 @@ strip_invalid_archs() {
   fi
   stripped=""
   for arch in $binary_archs; do
+=======
+  # Get architectures for current file
+  archs="$(lipo -info "$binary" | rev | cut -d ':' -f1 | rev)"
+  stripped=""
+  for arch in $archs; do
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     if ! [[ "${ARCHS}" == *"$arch"* ]]; then
       # Strip non-valid architectures in-place
       lipo -remove "$arch" -output "$binary" "$binary" || exit 1
@@ -129,13 +151,17 @@ strip_invalid_archs() {
   if [[ "$stripped" ]]; then
     echo "Stripped $binary of architectures:$stripped"
   fi
+<<<<<<< HEAD
   STRIP_BINARY_RETVAL=1
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 }
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AlgoliaSearch-Client-Swift/AlgoliaSearch.framework"
+<<<<<<< HEAD
   install_framework "${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework"
@@ -163,22 +189,35 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework"
+=======
+  install_framework "${BUILT_PRODUCTS_DIR}/Charts/Charts.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KSCrash/KSCrash.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework"
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework"
+<<<<<<< HEAD
   install_framework "${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework"
   install_framework "${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework"
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AlgoliaSearch-Client-Swift/AlgoliaSearch.framework"
+<<<<<<< HEAD
   install_framework "${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework"
@@ -206,16 +245,28 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework"
+=======
+  install_framework "${BUILT_PRODUCTS_DIR}/Charts/Charts.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KSCrash/KSCrash.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework"
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework"
+<<<<<<< HEAD
   install_framework "${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework"
   install_framework "${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework"
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi

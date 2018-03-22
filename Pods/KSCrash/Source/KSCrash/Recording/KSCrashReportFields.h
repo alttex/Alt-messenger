@@ -66,7 +66,10 @@
 #define KSCrashField_Ivars                 "ivars"
 #define KSCrashField_Language              "language"
 #define KSCrashField_Name                  "name"
+<<<<<<< HEAD
 #define KSCrashField_UserInfo              "userInfo"
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 #define KSCrashField_ReferencedObject      "referenced_object"
 #define KSCrashField_Type                  "type"
 #define KSCrashField_UUID                  "uuid"

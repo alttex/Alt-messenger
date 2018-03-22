@@ -50,11 +50,14 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 
+<<<<<<< HEAD
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 #pragma clang diagnostic ignored "-Wnullability-completeness"
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /* The action type associated to an OSNotificationAction object */
 typedef NS_ENUM(NSUInteger, OSNotificationActionType)  {
     OSNotificationActionTypeOpened,
@@ -282,7 +285,10 @@ typedef NS_ENUM(NSInteger, OSNotificationPermission) {
 @end
 
 
+<<<<<<< HEAD
 typedef void (^OSWebOpenURLResultBlock)(BOOL shouldOpen);
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 typedef void (^OSResultSuccessBlock)(NSDictionary* result);
 typedef void (^OSFailureBlock)(NSError* error);
@@ -307,9 +313,12 @@ extern NSString * const kOSSettingsKeyInAppAlerts;
 /*Enable In-App display of Launch URLs*/
 extern NSString * const kOSSettingsKeyInAppLaunchURL;
 
+<<<<<<< HEAD
 /*Prompt user yes/no to open URL's from push notifications*/
 extern NSString * const kOSSSettingsKeyPromptBeforeOpeningPushURL;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /* iOS10 +
  Set notification's in-focus display option.
  Value must be an OSNotificationDisplayType enum
@@ -368,7 +377,11 @@ typedef NS_ENUM(NSUInteger, ONE_S_LOG_LEVEL) {
 + (void)deleteTagsWithJsonString:(NSString*)jsonString;
 // Optional method that sends us the user's email as an anonymized hash so that we can better target and personalize notifications sent to that user across their devices.
 // Sends as MD5 and SHA1 of the provided email
+<<<<<<< HEAD
 + (void)syncHashedEmail:(NSString*)email __deprecated_msg("Please refer to our new Email methods/functionality such as setEmail(). This method will be removed in a future version of the OneSignal SDK");
+=======
++ (void)syncHashedEmail:(NSString*)email;
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 
 // - Subscription and Permissions
 + (void)IdsAvailable:(OSIdsAvailableBlock)idsAvailableBlock __deprecated_msg("Please use getPermissionSubscriptionState or addSubscriptionObserver and addPermissionObserver instead.");
@@ -431,5 +444,8 @@ typedef void (^OSEmailSuccessBlock)();
 + (void)setEmail:(NSString * _Nonnull)email withEmailAuthHashToken:(NSString * _Nullable)hashToken;
 
 @end
+<<<<<<< HEAD
 
 #pragma clang diagnostic pop
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d

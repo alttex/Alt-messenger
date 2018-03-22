@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSString *const FIREmailAuthProviderID NS_SWIFT_NAME(EmailAuthProviderID);
 
 /**
+<<<<<<< HEAD
     @brief A string constant identifying the email-link sign-in method.
  */
 extern NSString *const FIREmailLinkAuthSignInMethod NS_SWIFT_NAME(EmailLinkAuthSignInMethod);
@@ -37,6 +38,8 @@ extern NSString *const FIREmailPasswordAuthSignInMethod
     NS_SWIFT_NAME(EmailPasswordAuthSignInMethod);
 
 /**
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
     @brief Please use `FIREmailAuthProviderID` for Objective-C or `EmailAuthProviderID` for Swift instead.
  */
 extern NSString *const FIREmailPasswordAuthProviderID __attribute__((deprecated));
@@ -62,6 +65,7 @@ typedef FIREmailAuthProvider FIREmailPasswordAuthProvider __attribute__((depreca
  */
 + (FIRAuthCredential *)credentialWithEmail:(NSString *)email password:(NSString *)password;
 
+<<<<<<< HEAD
 /** @fn credentialWithEmail:Link:
     @brief Creates an `FIRAuthCredential` for an email & link sign in.
 
@@ -71,6 +75,8 @@ typedef FIREmailAuthProvider FIREmailPasswordAuthProvider __attribute__((depreca
  */
 + (FIRAuthCredential *)credentialWithEmail:(NSString *)email link:(NSString *)link;
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @fn init
     @brief This class is not meant to be initialized.
  */

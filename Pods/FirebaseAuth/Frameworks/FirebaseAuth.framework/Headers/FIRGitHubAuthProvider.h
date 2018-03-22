@@ -25,12 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 extern NSString *const FIRGitHubAuthProviderID NS_SWIFT_NAME(GitHubAuthProviderID);
 
+<<<<<<< HEAD
 /**
     @brief A string constant identifying the GitHub sign-in method.
  */
 extern NSString *const _Nonnull FIRGitHubAuthSignInMethod NS_SWIFT_NAME(GitHubAuthSignInMethod);
 
 
+=======
+>>>>>>> a5780c74ff23bf01c281b76ea1998d712d63599d
 /** @class FIRGitHubAuthProvider
     @brief Utility class for constructing GitHub credentials.
  */
