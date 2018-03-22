@@ -11,8 +11,93 @@ import UIKit
 import Photos
 import Firebase
 import GoogleSignIn
+import FacebookLogin
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
+
+
+
+extension WelcomeVC: FBSDKLoginButtonDelegate {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error?) {
+        print("Inside the login button method")
+        //If the user could not sign in then we have an error
+        if let error = error {
+            print("This is the user while sign in with the facebook")
+            print(error.localizedDescription)
+            return
+        }
+        //If the user is successfully signed in we store
+        if let result = result {
+            print("This is the result of the facebook sign in decline permission ? = \(result.declinedPermissions) and autorize \(result.grantedPermissions) is cancelled ?= \(result.isCancelled)")
+            //We check if the user give the permission to use is personal info from facebook
+            if (result.grantedPermissions != nil){
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                //If yes we then authenticate with facebase using the credential
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if let error = error {
+                        print("Error while login to firebase with facebook sign in \(error)")
+                        return
+                    }
+                    // We can now have the firebase user with all is relative data
+                    if let user = user {
+                        print("This is the user from facebook sign in \(user)")
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "toTabBar")
+                        
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    // This is not used because we are using a global signOut button
+    //This method need to be implemented in orderto comply to the protocol
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("User Logged Out")
+    }
+}
+
+//Extension for the google sing in protocol
+extension WelcomeVC : GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        print("Insidet the google sign in method")
+        // ...
+        if let error = error {
+            print("error while sign in with google \(error)")
+            return
+        }
+        guard let authentication = user.authentication else {
+            print("Inside the guard authentication")
+            return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                print("This is the error while sign in with firebase \(error)")
+                return
+            }
+            // User is signed in
+            // ...
+            if user != nil{
+                print("The user is not nil")
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "toTabBar")
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
+}
+
+//To dispaly Google sign in in page
+extension WelcomeVC: GIDSignInUIDelegate{
+    
+}
+
+
+
+
+class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let firebaseDataManager: FirebaseManager = FirebaseManager()
     
@@ -28,12 +113,18 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
     @IBOutlet var waringLabels: [UILabel]!
     @IBOutlet weak var loginEmailField: UITextField!
     @IBOutlet weak var loginPasswordField: UITextField!
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     @IBOutlet weak var cloudsView: UIImageView!
     @IBOutlet var inputFields: [UITextField]!
     var loginViewTopConstraint: NSLayoutConstraint!
     var registerTopConstraint: NSLayoutConstraint!
     let imagePicker = UIImagePickerController()
     var isLoginViewVisible = true
+    
+    var firebaseAuth : Auth!
+    var handle: AuthStateDidChangeListenerHandle!
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         get {
             return UIInterfaceOrientationMask.portrait
@@ -93,29 +184,7 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
     
     
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (user != nil){
-            if let authentication = user.authentication {
-                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-                Auth.auth().signIn(with: credential, completion: { (user, error) -> Void in
-                    if error == nil {
-                        self.firebaseDataManager.isUserSetup(userID: (Auth.auth().currentUser?.uid)!){ (answer) -> () in
-                            if(answer){
-                                
-                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                let controller = storyboard.instantiateViewController(withIdentifier: "toTabBar") as! UITabBarController
-                                
-                                self.show(controller, sender: self)
-                                
-                            } else {
-                                print("try again!")
-                            }
-                        }
-                    }
-                })
-            }
-        }
-    }
+
     //end of main google logging in func
     
     
@@ -146,6 +215,24 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
             }
         }
     }
+    @IBAction func didGoogleSignInBtnPressed(_ sender: GIDSignInButton) {
+    }
+    
+    @IBAction func didFacebookLoginBtnPressed(_ sender: FBSDKLoginButton) {
+        //Depending on the result we can define action to take
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile], viewController: nil) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success( _, _, _):
+                print("Logged in!")
+            }
+        }
+    }
+    
     
     @IBAction func switchViews(_ sender: UIButton) {
         if self.isLoginViewVisible {
@@ -266,6 +353,13 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, UINavigationControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customization()
+        firebaseAuth = Auth.auth()
+        
+        //Delegate for google sign in
+//        GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().delegate = self
+//        facebookLoginButton.delegate = self
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B4E38BD717EB149E892ADC2660FD8D9"
+               BlueprintIdentifier = "4064DBC4887539714E392FD2E3700272"
                BuildableName = "Pods_Alttex_messager.framework"
                BlueprintName = "Pods-Alttex_messager"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B4E38BD717EB149E892ADC2660FD8D9"
+            BlueprintIdentifier = "4064DBC4887539714E392FD2E3700272"
             BuildableName = "Pods_Alttex_messager.framework"
             BlueprintName = "Pods-Alttex_messager"
             ReferencedContainer = "container:Pods.xcodeproj">

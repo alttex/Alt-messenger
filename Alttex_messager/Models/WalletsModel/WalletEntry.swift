@@ -1,10 +1,4 @@
-//
-//  WalletEntry.swift
-//  CoinWidget
-//
-//  Created by Ty Schenk on 12/31/17.
-//  Copyright © 2017 Ty Schenk. All rights reserved.
-//
+
 
 import Foundation
 

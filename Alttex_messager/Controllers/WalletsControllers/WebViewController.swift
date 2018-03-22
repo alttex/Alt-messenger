@@ -28,15 +28,15 @@ class WebViewController: UIViewController {
     }
     
     func updateTheme() {
-        self.tabBarController?.tabBar.theme_barTintColor = ["#000", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor =  ["#FFF", "#000"]
-        self.view.theme_backgroundColor = ["#000", "#FFF"]
-        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_barTintColor = ["#000", "#FFF"]
-        self.navigationController?.navigationBar.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
-        self.navigationController?.navigationBar.theme_largeTitleTextAttributes =  [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
+//        self.tabBarController?.tabBar.theme_barTintColor = ["#000", "#FFF"]
+//        self.tabBarController?.tabBar.theme_tintColor =  ["#FFF", "#000"]
+//        self.view.theme_backgroundColor = ["#000", "#FFF"]
+//        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationController?.navigationBar.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationController?.navigationBar.theme_barTintColor = ["#000", "#FFF"]
+//        self.navigationController?.navigationBar.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
+//        self.navigationController?.navigationBar.theme_largeTitleTextAttributes =  [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
     }
 }

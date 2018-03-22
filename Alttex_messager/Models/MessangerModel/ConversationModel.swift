@@ -44,4 +44,3 @@ class Conversation {
         self.lastMessage = lastMessage
     }
 }
-

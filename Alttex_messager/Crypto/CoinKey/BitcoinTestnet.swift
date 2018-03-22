@@ -1,10 +1,4 @@
-//
-//  BitcoinTestnet.swift
-//  TCPClientTest
-//
-//  Created by Yusuke Asai on 2016/12/08.
-//  Copyright © 2016年 Yusuke Asai. All rights reserved.
-//
+
 
 import Foundation
 

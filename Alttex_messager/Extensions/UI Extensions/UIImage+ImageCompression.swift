@@ -1,14 +1,31 @@
-//
-//  ImageCompression.swift
-//  Radford Swaps
-//
-//  Created by Tevin Scott on 10/1/17.
-//  Copyright © 2017 Tevin Scott. All rights reserved.
-//
+
 import Foundation
 import UIKit
 
 ///extenstion to the UIImage class that adds the .jpeg function which compresses the image to a enumerated preset
+
+extension UIImageView {
+    
+    func downloadImage(from imgURL: String)  {
+        guard let urlForRequest = URL(string: imgURL) else { return  }
+        let url = URLRequest(url: urlForRequest)
+        let task = URLSession.shared.dataTask(with: url)
+        { (data, response, error) in
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data!)
+                
+            }
+        }
+        task.resume()
+    }
+}
+
 extension UIImage {
     
     enum JPEGQuality: CGFloat {

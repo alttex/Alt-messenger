@@ -24,7 +24,7 @@ class CoinsFeedController: UITableViewController, UISearchResultsUpdating {
     var entriesLoaded: Bool = false
 
     
-    let searchController = UISearchController(searchResultsController: nil)
+    //let searchController = UISearchController(searchResultsController: nil)
    
     
     override func viewDidLoad() {
@@ -33,13 +33,13 @@ class CoinsFeedController: UITableViewController, UISearchResultsUpdating {
      
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: NSNotification.Name(rawValue: "reloadViews"), object: nil)
-        
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search Coin Name" 
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        navigationItem.searchController = searchController
-        
+//        
+//        searchController.searchResultsUpdater = self
+//        searchController.searchBar.placeholder = "Search Coin Name"
+//        searchController.dimsBackgroundDuringPresentation = false
+//        definesPresentationContext = true
+//        navigationItem.searchController = searchController
+//        
         if Connectivity.isConnectedToInternet {
             self.updateData()
         } else {
@@ -91,7 +91,7 @@ class CoinsFeedController: UITableViewController, UISearchResultsUpdating {
             cell.valueLabel.textColor = UIColor.white
             cell.rankLabel.textColor = UIColor.white
         default:
-            cell.backgroundColor = UIColor.white
+            cell.backgroundColor = UIColor.black
             cell.nameLabel.textColor = UIColor.black
             cell.symbolLabel.textColor = UIColor.black
             cell.valueLabel.textColor = UIColor.black
@@ -194,9 +194,9 @@ class CoinsFeedController: UITableViewController, UISearchResultsUpdating {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         switch themeValue {
         case "dark":
-            return .lightContent
-        default:
             return .default
+        default:
+            return .lightContent
         }
     }
     
@@ -204,7 +204,7 @@ class CoinsFeedController: UITableViewController, UISearchResultsUpdating {
         switch themeValue {
         case "dark":
             // TextField Color Customization
-            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.black]
             
             // set theme to dark mode
             ThemeManager.setTheme(index: 0)
@@ -216,16 +216,16 @@ class CoinsFeedController: UITableViewController, UISearchResultsUpdating {
             ThemeManager.setTheme(index: 1)
         }
         
-        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
-        self.tableView.theme_backgroundColor = ["#000", "#FFF"]
-        self.view.theme_backgroundColor = ["#000", "#FFF"]
-        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_barTintColor = ["#000", "#FFF"]
-        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
-        self.navigationController?.navigationBar.theme_largeTitleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
-
-        UIApplication.shared.statusBarStyle = preferredStatusBarStyle
+//        self.tabBarController?.tabBar.theme_barTintColor = ["#66ccff", "#FFF"]
+//        self.tabBarController?.tabBar.theme_tintColor = ["#000", "#66ccff"]
+//        self.tableView.theme_backgroundColor = ["#000", "#343434"]
+//        self.view.theme_backgroundColor = ["#000", "#343434"]
+//        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationController?.navigationBar.theme_barTintColor = ["#000", "#FFF"]
+//        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
+//        self.navigationController?.navigationBar.theme_largeTitleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
+//
+//        UIApplication.shared.statusBarStyle = preferredStatusBarStyle
     }
 }

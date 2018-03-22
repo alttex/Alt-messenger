@@ -1,10 +1,3 @@
-//
-//  UserAccountInfo.swift
-//  Swaps
-//
-//  Created by Tevin Scott on 10/21/17.
-//  Copyright © 2017 Tevin Scott. All rights reserved.
-//
 
 import Foundation
 import Firebase

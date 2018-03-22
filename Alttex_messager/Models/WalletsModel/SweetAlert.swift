@@ -1,10 +1,4 @@
-//
-//  SweetAlert.swift
-//  SweetAlert
-//
-//  Created by Codester on 11/3/14.
-//  Copyright (c) 2014 Codester. All rights reserved.
-//
+
 
 import Foundation
 import UIKit

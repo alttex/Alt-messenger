@@ -1,10 +1,4 @@
-//
-//  Wif.swift
-//  TCPClientTest
-//
-//  Created by Yusuke Asai on 2017/02/16.
-//  Copyright © 2017年 Yusuke Asai. All rights reserved.
-//
+
 
 import Foundation
 

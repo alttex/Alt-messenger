@@ -9,38 +9,53 @@
 import Foundation
 import UIKit
 import Charts
+import UIKit
+import CoreData
 
 class WalletsViewController: ChartsVC {
     
+    var managedObjextContext:NSManagedObjectContext!
+    var NewPriceCoin = [CoinPrice]()
+    var coinPrice = [String]()
+    
     @IBAction func addCoinBtn(_ sender: UIBarButtonItem) {
-     
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "allCoinsVC") //as! NavVC
         self.present(vc!, animated: false, completion: nil)
     }
+    
     @IBOutlet var chartView: BarChartView!
     @IBAction func moreBtnTapped(_ sender: UIBarButtonItem) {
         handleOption(Option.saveToGallery, forChartView: chartView)
     }
-    var options: [Option]!
     
-    let dataLabels = ["100",
-                      "200",
-                      "300",
-                      "400",
-                      "500",
-                      "600"]
+    var options: [Option]!
+    let dataLabels = ["100", "200","300","400","500","600"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Get Api info
+        coinPrice =  ApiHelper.getCoinValue()
+        
+        //Context
+        managedObjextContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        // Data from databse about coin
+        getDataFromCD()
+        
+        
         self.title = "Wallets"
-        self.navigationController?.navigationBar.barTintColor = .white
-        chartView.backgroundColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1)
-        chartView.backgroundColor = UIColor(red: 24/255, green: 24/255, blue: 24/255, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+        
         chartView.highlightPerDragEnabled = false
         chartView.drawValueAboveBarEnabled = true
         chartView.autoScaleMinMaxEnabled = true
         chartView.fitBars = true
         handleOption(Option.animateXY, forChartView: chartView)
+        
+        
         // Do any additional setup after loading the view.
         self.options = [.toggleValues,
                         .toggleHighlight,
@@ -54,49 +69,80 @@ class WalletsViewController: ChartsVC {
                         .toggleBarBorders]
         
         self.setup(barLineChartView: chartView)
-        
         chartView.delegate = self
-        
         chartView.setExtraOffsets(left: 12, top: -15, right: 12, bottom: -50)
-        
         chartView.drawBarShadowEnabled = false
         chartView.chartDescription?.enabled = false
         chartView.xAxis.enabled = false
         chartView.rightAxis.enabled = false
         chartView.drawBarShadowEnabled = false
-        
-        
         let leftAxis = chartView.leftAxis
         leftAxis.drawLabelsEnabled = false
-        
-        
         leftAxis.drawAxisLineEnabled = false
         leftAxis.drawZeroLineEnabled = true
-        leftAxis.zeroLineColor = .white
+        leftAxis.zeroLineColor = .black
         leftAxis.zeroLineWidth = 1.5
         
         self.updateChartData()
+        
+        
     }
+    
+    
+    
+    func getDataFromCD(){
+        
+        let NewtcktRequest:NSFetchRequest<CoinPrice> = CoinPrice.fetchRequest()
+        do {
+            NewPriceCoin = try managedObjextContext.fetch(NewtcktRequest)
+        }catch {
+            print("Could not load data from database \(error.localizedDescription)")
+        }
+    }
+    
     
     override func updateChartData() {
         if self.shouldHideData {
             chartView.data = nil
             return
         }
-        
         self.setChartData()
     }
     
+    
     func setChartData() {
-        let yVals = [BarChartDataEntry(x: 0, y: 124.1),
-                     BarChartDataEntry(x: 1, y: 238.5),
-                     BarChartDataEntry(x: 2, y: 1280.1),
-                     BarChartDataEntry(x: 3, y:   42.3),
-                     BarChartDataEntry(x: 4, y: 980.1),
-                     BarChartDataEntry(x: 5, y: 91.1)]
+        var coin = [String]() // nil value
+        for value in NewPriceCoin {
+            coin.append(value.price! as String)
+        }
+        if coin.isEmpty {
+            coin = ApiHelper.getCoinValue()    // get info from api
+        }
+        
+        if Connectivity.isConnectedToInternet == false {
+            coin = ["8571.87", "538.495", "77.692862", "1004.64", "160.565", "0.190794"] // default parametr when connection lost
+            SweetAlert().showAlert("No internet connection" )
+        }
+        
+        let coin0:Double? = Double(coin[0])
+        let coin1:Double? = Double(coin[1])
+        let coin2:Double? = Double(coin[2])
+        let coin3:Double? = Double(coin[3])
+        let coin4:Double? = Double(coin[4])
+        let coin5:Double? = Double(coin[5])
+        
+        let yVals = [BarChartDataEntry(x: 0, y: coin0!),
+                     BarChartDataEntry(x: 1, y: coin1!),
+                     BarChartDataEntry(x: 2, y: coin2!),
+                     BarChartDataEntry(x: 3, y: coin3!),
+                     BarChartDataEntry(x: 4, y: coin4!),
+                     BarChartDataEntry(x: 5, y: coin5!)]
+        
+        
         
         let green = UIColor(red: 228/255, green: 32/255, blue: 30/255, alpha: 1)
         let red = UIColor(red: 31/255, green: 228/255, blue: 24/255, alpha: 1)
+        
         let colors = yVals.map { (entry) -> NSUIColor in
             return entry.y > 257 ? red : green
         }
@@ -104,6 +150,8 @@ class WalletsViewController: ChartsVC {
         let set = BarChartDataSet(values: yVals, label: "")
         set.colors = colors
         set.valueColors = colors
+        //set.stackLabels = ["btc","btc","btc","btc","btc","btc"]
+        
         let data = BarChartData(dataSet: set)
         data.setValueFont(.systemFont(ofSize: 13))
         
@@ -112,6 +160,9 @@ class WalletsViewController: ChartsVC {
         data.setValueFormatter(DefaultValueFormatter(formatter: formatter))
         data.barWidth = 0.9
         chartView.data = data
+        chartView.fitBars = true
+        
+        
         
     }
     
@@ -119,7 +170,7 @@ class WalletsViewController: ChartsVC {
         super.handleOption(option, forChartView: chartView)
     }
     
-
+    
     override func handleOption(_ option: Option, forChartView chartView: ChartViewBase) {
         switch option {
         case .toggleValues:
@@ -176,7 +227,7 @@ class WalletsViewController: ChartsVC {
         }
     }
     
-
+    
     
     override func setup(pieChartView chartView: PieChartView) {
         chartView.usePercentValuesEnabled = true
@@ -196,10 +247,20 @@ class WalletsViewController: ChartsVC {
         let centerText = NSMutableAttributedString(string: "Charts\nby Daniel Cohen Gindi")
         centerText.setAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 13)!,
                                   .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
+        
+        
+        
+        
         centerText.addAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 11)!,
                                   .foregroundColor : UIColor.gray], range: NSRange(location: 10, length: centerText.length - 10))
+        
+        
+        
+        
         centerText.addAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 11)!,
-                                  .foregroundColor : UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)], range: NSRange(location: centerText.length - 19, length: 19))
+                                  .foregroundColor : UIColor.yellow], range: NSRange(location: centerText.length - 19, length: 19))
+        
+        //(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
         chartView.centerAttributedText = centerText;
         
         chartView.drawHoleEnabled = false
@@ -238,11 +299,11 @@ class WalletsViewController: ChartsVC {
     // TODO: Cannot override from extensions
     //extension DemoBaseViewController: ChartViewDelegate {
     override func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        NSLog("chartValueSelected");
+        //NSLog("chartValueSelected");
     }
     
     override func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        NSLog("chartValueNothingSelected");
+        // NSLog("chartValueNothingSelected");
     }
     
     override func chartScaled(_ chartView: ChartViewBase, scaleX: CGFloat, scaleY: CGFloat) {

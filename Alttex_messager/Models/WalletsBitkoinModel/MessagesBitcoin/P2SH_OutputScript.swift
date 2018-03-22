@@ -1,10 +1,4 @@
-//
-//  P2SH_OutputScript.swift
-//  SwiftBitcoin
-//
-//  Created by Yusuke Asai on 2017/04/04.
-//  Copyright © 2017年 Yusuke Asai. All rights reserved.
-//
+
 
 import Foundation
 

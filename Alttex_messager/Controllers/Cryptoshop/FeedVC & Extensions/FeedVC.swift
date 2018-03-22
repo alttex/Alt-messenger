@@ -1,34 +1,28 @@
-//
-//  FeedVC.swift
-//  Swaps
-//
-//  Created by Tevin Scott on 12/17/17.
-//  Copyright © 2017 Tevin Scott. All rights reserved.
-//
 
-import Foundation
-import UIKit
-import GoogleSignIn
+
+//import GoogleSignIn
 import Firebase
 import AlgoliaSearch
+import FirebaseDatabase
+import SDWebImage
+import FirebaseAuth
+
+
 
 /// A Class that manages the Feed View and its sub views
-class FeedVC : UIViewController, UISearchBarDelegate{
+class FeedVC : UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource {
     
     // MARK: - Attributes
     //data structures
     private let coredataManager = CoreDataManager()
     private let firebaseDataManager = FirebaseManager()
-    private let algoliaSearchManager = AlgoliaSearchManager.init()
-    internal var setOfItems: SaleItemCollection = SaleItemCollection.init(){ didSet { collectionView?.reloadData() } }
-    //adMob variables
-   
-    private let adInterval = 3
+    var itemToDetail : ItemShop? = nil
+    fileprivate let sectionInsets = UIEdgeInsets(top: 30.0, left: 15.0, bottom: 30.0, right: 15.0)
+    fileprivate let itemsPerRow: CGFloat = 2
     // outlet variables
-    @IBOutlet var searchBar: UISearchBar!
+  //  @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var collectionView: UICollectionView!
     //layout variables
-    private let leftAndRightPadding: CGFloat = 32.0
     private let numberOfItemsPerRow: CGFloat = 2.0
     private let heightAdjustment: CGFloat = 5.0
     private var extendedCollectionViewHeight: CGFloat!
@@ -36,136 +30,109 @@ class FeedVC : UIViewController, UISearchBarDelegate{
     private var searchActive : Bool = false
     // collection View variables
     private var refreshControl: UIRefreshControl!
+
+    var currentUser: User?
+    var ref: DatabaseReference!
+    var items = [ItemShop]()
+
+    var resultData : NSData = NSData()
+    fileprivate var _refHandle: DatabaseHandle!
+    
     internal var collectionViewOriginalLocation: CGFloat!
     internal let standardCellIdentifier = "SaleCell"
-    internal let userCellIdentifier = "UserSaleCell"
+
 
     // MARK: - Button Actions
     /**
      Presents the newItemView to user, if they are currently signed into an account.
      */
-    @IBAction func postItemBtnAction(_ sender: Any) {
-        if(Auth.auth().currentUser?.uid != nil) {
-            performSegue(withIdentifier: "postNewItemSegue", sender: self)
-        }
-    }
-    
-    /**
-     this button action returns the user to the Profile Account View unless the user
-     is not Signed in, in which case they are returned to the Sign In View.
-     */
-    @IBAction func profileBtnAction(_ sender: Any) {
-        //if user is currently signed in the profile view is presented.
-        if (Auth.auth().currentUser?.uid != nil){
-           performSegue(withIdentifier: "goToProfileSegue", sender: self)
-        } else { // else the user is returned to the sign in view.
-            self.dismiss(animated: true, completion: {})
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
-    
-    // MARK: - View controller life cycle
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //2
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
         
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    //3
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
     }
+    
+    
+    
+    // 4
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //search and database init.
-        searchBar.delegate = self
-        algoliaSearchManager.getAllItems() { (escapingList) -> () in
-            self.setOfItems = SaleItemCollection.init(inputList: escapingList)
-        }
-        //constrains the layout to the layout property attributes.
-        let width = ((collectionView.frame).width - leftAndRightPadding)/numberOfItemsPerRow
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width+heightAdjustment)
-        collectionViewOriginalLocation = self.collectionView.frame.origin.y
-        //addNativeExpressAds()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
-        refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
-        collectionView.addSubview(refreshControl) // not required when using UITableViewController
-    }
-    
-    /**
-     Refreshes this class's List of items, pulling from the Algolia Index.
-     */
-    @objc func refresh(sender:AnyObject) {
-        algoliaSearchManager.getAllItems() { (escapingList) -> () in
-            self.setOfItems = SaleItemCollection.init(inputList: escapingList)
-            self.refreshControl.endRefreshing()
-        }
-    }
-    // MARK: - Search bar functionality.
-    
-    //functions are already documented by Apple.
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        algoliaSearchManager.searchDatabase(searchString: searchText) {
-            (escapingList) -> () in
-            self.setOfItems = SaleItemCollection.init(inputList: escapingList)
-        }
-    }
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchActive = true;
-    }
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    // MARK: - Navigation Bar Hide and Show Functions.
-    
-    /**
-     A function used to hide and show the navigation bar when the user is scrolling the collectionView of this class.
-    */
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if(velocity.y>0) {
-            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
-            UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
-                self.navigationController?.setToolbarHidden(true, animated: true)
-
-            }, completion: nil)
+        let shopServiceApi = ItemsServiceApi()
+        
+        shopServiceApi.getAllItemsFromShopDatabase { (allItems) in
+            self.items = allItems
             
-        } else {
-            UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(false, animated: true)
-            }, completion: nil)
+            // sort the array based on time of creation
+            print("\n getAllItemsFromShopDatabase: ",self.items)
+            self.items.sort(by: { $1.timeOfCreation < $0.timeOfCreation
+            })
+            self.collectionView.reloadData()
         }
-    }
-    /**
-     Ends editing when user taps anywhere outside of the displayed keyboard.
-    */
-    @objc func didTapView(gesture: UITapGestureRecognizer){
-        view.endEditing(true)
+        self.collectionView.reloadData()
     }
     
-    /** for future commit, google add
-     func addNativeExpressAds(){
-     let index = 2
-     let size = GADAdSizeFromCGSize(CGSize(width: 150, height: 150))
-     while index < setOfItems.collectionCount {
-     let adView = GADNativeExpressAdView(adSize: size)
-     //Stopping Point
-     //https://www.youtube.com/watch?v=chNb7-k6m4M 3:00 in
-     }
-     }
-     */
+    
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+ 
+     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath){
+        itemToDetail = items[indexPath.item]
+        performSegue(withIdentifier: "goDetail", sender: self)
+    }
+            
+    
+    
+    // send the item to DetailViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail" {
+            let detailVC = segue.destination as! DetailViewController
+            if let itemDetail = self.itemToDetail {
+                detailVC.itemFromMain = itemDetail
+                 print ("\n  func prepare   itemDetail:",itemDetail)
+            }
+        }
+    }
+
+ 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return  items.count
+    }
+    
+ 
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: standardCellIdentifier, for: indexPath) as! FeedCollectionViewCell
+        cell.priceLabel.text = items[indexPath.row].price
+        cell.titleLabel.text = items[indexPath.row].nameOfArticle
+        let imagePthUrl = URL(string: items[indexPath.row].pathToImage)
+        cell.saleItemImg.sd_setImage(with: imagePthUrl)
+        return cell
+    }
+    
+
+  
 }

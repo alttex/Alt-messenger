@@ -1,10 +1,4 @@
-//
-//  HexColors.swift
-//  CoinAudit
-//
-//  Created by Ty Schenk on 12/28/17.
-//  Copyright © 2017 Ty Schenk. All rights reserved.
-//
+
 
 import Foundation
 import UIKit

@@ -237,7 +237,7 @@ class NavVC: UINavigationController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.items.count > 0 {
             self.dismissExtraViews()
-            let userInfo = ["user": self.items[indexPath.row]]
+            let userInfo = ["users": self.items[indexPath.row]]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showUserMessages"), object: nil, userInfo: userInfo)
         }
     }

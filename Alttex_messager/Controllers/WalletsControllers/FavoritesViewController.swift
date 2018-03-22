@@ -23,7 +23,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         favTableView.dataSource = self
         favTableView.separatorColor = .none
         // MARK: Ad View
-    
+        //self.favTableView.backgroundColor = UIColor.rbg(r: 24, g: 24, b: 24)
    
         NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: NSNotification.Name(rawValue: "reloadViews"), object: nil)
         
@@ -35,6 +35,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         favorites = defaults.object(forKey:"CoinAuditFavorites") as? [String] ?? [String]()
         favorites = favorites.sorted()
         self.favTableView.reloadData()
+        
         updateTheme()
     }
 
@@ -98,20 +99,20 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.valueLabel.text = "\(coin.priceBTC) BTC"
         }
         
-        // Theme Drawing code
+       //  Theme Drawing code
         switch themeValue {
         case "dark":
-            cell.backgroundColor = UIColor.black
-            cell.nameLabel.textColor = UIColor.white
-            cell.symbolLabel.textColor = UIColor.white
-            cell.valueLabel.textColor = UIColor.white
-            cell.rankLabel.textColor = UIColor.white
+            cell.backgroundColor = .white
+            cell.nameLabel.textColor = .white
+            cell.symbolLabel.textColor = .white
+            cell.valueLabel.textColor = .white
+            cell.rankLabel.textColor = .white
         default:
-            cell.backgroundColor = UIColor.white
-            cell.nameLabel.textColor = UIColor.black
-            cell.symbolLabel.textColor = UIColor.black
-            cell.valueLabel.textColor = UIColor.black
-            cell.rankLabel.textColor = UIColor.black
+            cell.backgroundColor = .white
+            cell.nameLabel.textColor = .white
+            cell.symbolLabel.textColor = .white
+            cell.valueLabel.textColor = .white
+            cell.rankLabel.textColor = .white
         }
 
         return cell
@@ -132,18 +133,18 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func updateTheme() {
-        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
-        self.view.theme_backgroundColor = ["#000", "#FFF"]
-        self.favTableView.theme_backgroundColor = ["#000", "#FFF"]
-        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_barTintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_tintColor = ["#000", "#FFF"]
-        
-        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white]]
-        self.navigationController?.navigationBar.theme_largeTitleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white]]
+//        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
+//        self.tabBarController?.tabBar.theme_tintColor = ["#343434", "#01b207"]
+//        self.view.theme_backgroundColor = ["#242424", "#242424"]
+//       // self.favTableView.theme_backgroundColor = ["#242424", "#242424"]
+//        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationController?.navigationBar.theme_tintColor = ["#FFF", "#000"]
+//        self.navigationController?.navigationBar.theme_barTintColor = ["#000", "#FFF"]
+//       
+//        
+//        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
+//        self.navigationController?.navigationBar.theme_largeTitleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
     }
 
 }

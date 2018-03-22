@@ -1,10 +1,4 @@
-//
-//  FiniteField.swift
-//  FInt
-//
-//  Created by Yusuke Asai on 2016/09/30.
-//  Copyright © 2016年 Yusuke Asai. All rights reserved.
-//
+
 
 import BigInt
 

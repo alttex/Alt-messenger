@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Review View Controller-->
+        <scene sceneID="i7y-pg-bGg">
+            <objects>
+                <viewController storyboardIdentifier="Review" id="Zsg-ha-4aX" customClass="ReviewViewController" customModule="Alttex_messager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qVJ-Ij-lV2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sgh-xt-83e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3mA-TC-3Id">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nR-It-SmA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ugh-5w-ukn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f80-LX-k2i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mwP-zO-0sX">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HpQ-aG-aEc">
+                                            <rect key="frame" x="16" y="86" width="343" height="311"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80353702910958902" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="311" id="tTS-2F-EfP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="HpQ-aG-aEc" firstAttribute="leading" secondItem="Ugh-5w-ukn" secondAttribute="leading" constant="16" id="9jw-g1-Gzs"/>
+                                        <constraint firstAttribute="bottom" secondItem="f80-LX-k2i" secondAttribute="bottom" id="Cgu-dv-iAi"/>
+                                        <constraint firstAttribute="trailing" secondItem="f80-LX-k2i" secondAttribute="trailing" id="HeF-Yh-QVv"/>
+                                        <constraint firstItem="HpQ-aG-aEc" firstAttribute="top" secondItem="Ugh-5w-ukn" secondAttribute="top" constant="86" id="SW5-7D-1Ol"/>
+                                        <constraint firstItem="f80-LX-k2i" firstAttribute="top" secondItem="Ugh-5w-ukn" secondAttribute="top" id="USP-GT-hKL"/>
+                                        <constraint firstAttribute="trailing" secondItem="HpQ-aG-aEc" secondAttribute="trailing" constant="16" id="ljO-Vr-F5K"/>
+                                        <constraint firstItem="f80-LX-k2i" firstAttribute="leading" secondItem="Ugh-5w-ukn" secondAttribute="leading" id="zmw-VB-Bkw"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sgh-xt-83e" firstAttribute="top" secondItem="8nR-It-SmA" secondAttribute="bottom" id="6WD-Cd-5xl"/>
+                            <constraint firstItem="8nR-It-SmA" firstAttribute="leading" secondItem="3mA-TC-3Id" secondAttribute="leading" id="ZTN-Ka-PMo"/>
+                            <constraint firstItem="8nR-It-SmA" firstAttribute="top" secondItem="3mA-TC-3Id" secondAttribute="top" id="aNr-HA-edT"/>
+                            <constraint firstAttribute="trailing" secondItem="8nR-It-SmA" secondAttribute="trailing" id="dtH-CM-9HS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="T9s-uQ-a7i">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="dym-vc-xWl">
+                            <connections>
+                                <action selector="submitReview:" destination="Zsg-ha-4aX" id="xrH-l8-bQL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="reviewEditableTextView" destination="HpQ-aG-aEc" id="FSW-V7-JLv"/>
+                        <outlet property="submitBtn" destination="dym-vc-xWl" id="5mA-EN-x1L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cR5-fm-TTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848.79999999999995" y="-120.98950524737631"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w6p-ax-o8q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bon-Lp-McN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TNi-ah-dTR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zsg-ha-4aX" kind="relationship" relationship="rootViewController" id="XGD-4N-Y2q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVO-Z0-LAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90.400000000000006" y="-120.98950524737631"/>
+        </scene>
+    </scenes>
+</document>

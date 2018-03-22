@@ -1,10 +1,3 @@
-//
-//  IPAddress.swift
-//  TCPClientTest
-//
-//  Created by Yusuke Asai on 2016/10/28.
-//  Copyright © 2016年 Yusuke Asai. All rights reserved.
-//
 
 import Foundation
 

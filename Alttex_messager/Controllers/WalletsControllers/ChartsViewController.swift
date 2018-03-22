@@ -135,11 +135,16 @@ class ChartsVC: UIViewController, ChartViewDelegate,UISearchResultsUpdating {
         NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: NSNotification.Name(rawValue: "reloadViews"), object: nil)
         
         searchController.searchResultsUpdater = self
-        searchController.searchBar.backgroundColor = UIColor.rbg(r: 24, g: 24, b: 24)
+        searchController.searchBar.backgroundColor = UIColor.rbg(r: 34, g: 34, b: 34)
         searchController.searchBar.placeholder = "Search Coin Name"
         searchController.dimsBackgroundDuringPresentation = true
-        definesPresentationContext = true
+        //definesPresentationContext = true
         navigationItem.searchController = searchController
+        searchController.searchBar.setTextFieldColor(color: .white)
+        searchController.searchBar.setTextColor(color: .white)
+        searchController.searchBar.setPlaceholderTextColor(color: .white)
+        
+        
         
         if Connectivity.isConnectedToInternet {
             self.updateData()
@@ -410,23 +415,23 @@ class ChartsVC: UIViewController, ChartViewDelegate,UISearchResultsUpdating {
             ThemeManager.setTheme(index: 0)
         default:
             // TextField Color Customization
-            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.black]
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
             
             // set theme to light mode
             ThemeManager.setTheme(index: 1)
         }
         
-        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#000"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
-        self.tableView.theme_backgroundColor = ["#242424", "#FFF"]
-        self.view.theme_backgroundColor = ["#242424", "#FFF"]
-        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_barTintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
-        self.navigationController?.navigationBar.theme_largeTitleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white]]
-        
-        UIApplication.shared.statusBarStyle = preferredStatusBarStyle
+//        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#000"]
+//        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
+//        self.tableView.theme_backgroundColor = ["#242424", "#242424"]
+//        self.view.theme_backgroundColor = ["#242424", "#343434j"]
+//        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#FFF"]
+//        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#FFF"]
+//        self.navigationController?.navigationBar.theme_barTintColor = ["#FFF", "#FFF"]
+//        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
+//        self.navigationController?.navigationBar.theme_largeTitleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white]]
+//
+//        UIApplication.shared.statusBarStyle = preferredStatusBarStyle
     }
     
 }
@@ -467,7 +472,7 @@ extension ChartsVC: UITableViewDelegate, UITableViewDataSource {
             cell.valueLabel.textColor = UIColor.rbg(r: 34, g: 34, b: 34)
             cell.rankLabel.textColor = UIColor.rbg(r: 34, g: 34, b: 34)
         default:
-            cell.backgroundColor = UIColor.black
+            cell.backgroundColor = UIColor.rbg(r: 34, g: 34, b: 34)
             cell.nameLabel.textColor = UIColor.white
             cell.symbolLabel.textColor = UIColor.white
             cell.valueLabel.textColor = UIColor.white

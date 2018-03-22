@@ -1,17 +1,11 @@
-//
-//  Data.swift
-//  CoinAudit
-//
-//  Created by Ty Schenk on 12/29/17.
-//  Copyright © 2017 Ty Schenk. All rights reserved.
-//
+
 
 import Foundation
 import NotificationCenter
 import CoreData
 import Alamofire
 
-let defaults = UserDefaults(suiteName: "group.coinaudit.data")!
+let defaults = UserDefaults(suiteName: "group.messenger.data")!
 var alerts: [AlertEntry] = []
 var entries: [CoinEntry] = []
 var favorites: [String] = []

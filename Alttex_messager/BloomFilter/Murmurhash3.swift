@@ -1,10 +1,4 @@
-//
-//  Murmurhash3.swift
-//  Murmurhash3
-//
-//  Created by Yusuke Asai on 2016/10/23.
-//  Copyright © 2016年 Yusuke Asai. All rights reserved.
-//
+
 
 import Foundation
 

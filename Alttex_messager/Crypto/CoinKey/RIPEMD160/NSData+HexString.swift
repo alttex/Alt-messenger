@@ -1,10 +1,4 @@
-//
-//  NSData+HexString.swift
-//  RIPEMD-160
-//
-//  Created by Yusuke Asai on 2016/10/09.
-//  Copyright © 2016年 Yusuke Asai. All rights reserved.
-//
+
 
 import Foundation
 import BigInt

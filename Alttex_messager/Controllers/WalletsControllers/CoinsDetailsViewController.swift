@@ -39,11 +39,12 @@ class CoinsDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // load favorites
+    
         favorites = defaults.object(forKey:"CoinAuditFavorites") as? [String] ?? [String]()
         favorites = favorites.sorted()
         
         let updateButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(updateCoin))
-        updateButton.image = #imageLiteral(resourceName: "refresh")
+        updateButton.image =  #imageLiteral(resourceName: "refresh") // #imageLiteral(resourceName: "SYNC")
         self.navigationItem.rightBarButtonItem = updateButton
         
         if favorites.contains(id) {
@@ -52,7 +53,7 @@ class CoinsDetailsViewController: UIViewController {
             favButton.setTitle("Remove Favorite", for: .normal)
         } else {
             self.favorited = false
-            favButton.backgroundColor = UIColor.gray
+            favButton.backgroundColor = UIColor.red
             favButton.setTitle("Favorite", for: .normal)
         }
     }
@@ -61,8 +62,10 @@ class CoinsDetailsViewController: UIViewController {
      
         
         if entries.count != 0 && viewer == false {
-            self.formatData(coin: entries.first(where: {$0.id == id})!)
-            self.formatPercents(coin: entries.first(where: {$0.id == id})!)
+            self.formatData(coin: entries.first!) //first(where: {$0.id == id})!)
+            
+            
+            self.formatPercents(coin: entries.first!) //(where: {$0.id == id})
             updateTheme()
         }
         
@@ -108,7 +111,7 @@ class CoinsDetailsViewController: UIViewController {
     @IBAction func favoriteButton(_ sender: Any) {
         if favorited == true {
             favorited = false
-            favButton.backgroundColor = UIColor.lightGray
+            favButton.backgroundColor = UIColor.red
             favButton.setTitle("Favorite", for: .normal)
             // remove
             if let index = favorites.index(of: id) {
@@ -118,7 +121,7 @@ class CoinsDetailsViewController: UIViewController {
             print("Deleted: \(id) from favorites")
         } else {
             favorited = true
-            favButton.backgroundColor = UIColor(hexString: "D65465")
+            favButton.backgroundColor = UIColor.green
             favButton.setTitle("Favorited", for: .normal)
             // save coin id to array
             favorites.append(id)
@@ -149,26 +152,34 @@ class CoinsDetailsViewController: UIViewController {
             let strDate = dateFormatter.string(from: date)
             
             lastUpdated.text = "Last Updated: \(strDate) UTC"
+            lastUpdated.textColor = .white
         } else {
             lastUpdated.text = "Last Updated: \(coin.lastUpdated)"
+            lastUpdated.textColor = .white
         }
         
         if coin.marketCapUSD != "unknown" {
             marketCapLabel.text = "Market Cap: \(coin.marketCapUSD.formatUSD())"
+            marketCapLabel.textColor = .white
         } else {
             marketCapLabel.text = "Market Cap: \(coin.marketCapUSD)"
+            marketCapLabel.textColor = .white
         }
         
         if coin.volumeUSD != "unknown" {
             volumeLabel.text = "Volume (24h): \(coin.volumeUSD.formatUSD())"
+            volumeLabel.textColor = .white
         } else {
             volumeLabel.text = "Volume (24h): \(coin.volumeUSD)"
+            volumeLabel.textColor = .white
         }
         
         if coin.maxSupply != "unknown" {
             maxSupplyLabel.text = "Max Supply: \(coin.maxSupply.formatDecimal())"
+            maxSupplyLabel.textColor = .white
         } else {
             maxSupplyLabel.text = "Max Supply: \(coin.maxSupply)"
+            maxSupplyLabel.textColor = .white
         }
         
         if coin.availableSupply != "unknown" {
@@ -275,24 +286,9 @@ class CoinsDetailsViewController: UIViewController {
     }
     
     @objc func updateCoin() {
-        if Connectivity.isConnectedToInternet {
-            SwiftSpinner.show("Updating Data...")
-            // Pull Coin Data
-            Alamofire.request("https://api.coinmarketcap.com/v1/ticker/\(id)/convert=USD").responseJSON { response in
-                for coinJSON in (response.result.value as? [[String : AnyObject]])! {
-                    if let coin = CoinEntry.init(json: coinJSON) {
-                        let index = entries.index(where: {$0.id == self.id})
-                        entries[index!] = coin
-                        self.formatData(coin: coin)
-                        self.formatPercents(coin: coin)
-                        SwiftSpinner.hide()
-                    }
-                }
-            }
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadViews"), object: nil)
-        } else {
-            SweetAlert().showAlert("No internet connection")
-        }
+        
+        SwiftSpinner.show("Updating Data...")
+        SwiftSpinner.hide()
     }
     
     @objc func doneButton() {
@@ -312,24 +308,24 @@ class CoinsDetailsViewController: UIViewController {
     
     
     func updateTheme() {        
-        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
-        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
-        self.view.theme_backgroundColor = ["#000", "#fff"]
-        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_barTintColor = ["#000", "#FFF"]
-        self.navigationController?.navigationBar.theme_tintColor = ["#FFF", "#000"]
-        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
-        self.navigationController?.navigationBar.theme_largeTitleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.white], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.black]]
-        marketCapLabel.theme_textColor = ["#FFF", "#000"]
-        volumeLabel.theme_textColor = ["#FFF", "#000"]
-        circulatingSupplyLabel.theme_textColor = ["#FFF", "#000"]
-        maxSupplyLabel.theme_textColor = ["#FFF", "#000"]
-        priceUSDLabel.theme_textColor = ["#FFF", "#000"]
-        priceBTCLabel.theme_textColor = ["#FFF", "#000"]
-        for item in PercentChangeLabels {
-            item.theme_textColor = ["#FFF", "#000"]
+//        self.tabBarController?.tabBar.theme_barTintColor = ["#01b207", "#FFF"]
+//        self.tabBarController?.tabBar.theme_tintColor = ["#FFF", "#01b207"]
+//        self.view.theme_backgroundColor = ["#343434", "#343434"]
+//        self.navigationItem.leftBarButtonItem?.theme_tintColor = ["#000", "#fff"]
+//        self.navigationItem.rightBarButtonItem?.theme_tintColor = ["#000", "#fff"]
+//        self.navigationController?.navigationBar.theme_barTintColor = ["#000", "#FFF"]
+//        self.navigationController?.navigationBar.theme_tintColor = ["#000", "#fff"]
+//        self.navigationController?.navigationBar.theme_titleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white]]
+//        self.navigationController?.navigationBar.theme_largeTitleTextAttributes = [[NSAttributedStringKey.foregroundColor.rawValue : UIColor.black], [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white]]
+//        marketCapLabel.theme_textColor = ["#FFF", "#000"]
+//        volumeLabel.theme_textColor = ["#FFF", "#000"]
+//        circulatingSupplyLabel.theme_textColor = ["#FFF", "#000"]
+//        maxSupplyLabel.theme_textColor = ["#FFF", "#000"]
+//        priceUSDLabel.theme_textColor = ["#FFF", "#000"]
+//        priceBTCLabel.theme_textColor = ["#FFF", "#000"]
+//        for item in PercentChangeLabels {
+//            item.theme_textColor = ["#FFF", "#fff"]
         }
     }
     
-}
+

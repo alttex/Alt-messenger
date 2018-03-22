@@ -1,10 +1,4 @@
-//
-//  RejectMessage.swift
-//  TCPClientTest
-//
-//  Created by Yusuke Asai on 2017/01/04.
-//  Copyright © 2017年 Yusuke Asai. All rights reserved.
-//
+
 
 import Foundation
 

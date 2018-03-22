@@ -100,8 +100,13 @@ class User: NSObject {
                         let user = User.init(name: name, email: email, id: id, profilePic: profilePic!)
                         completion(user)
                     }
-                }).resume()
+                            }).resume()
+            
+            
+            
+            
             }
+            
         })
     }
     
@@ -121,5 +126,3 @@ class User: NSObject {
         self.profilePic = profilePic
     }
 }
-
-

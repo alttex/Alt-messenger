@@ -1,10 +1,4 @@
-//
-//  ECurve.swift
-//  FInt
-//
-//  Created by Yusuke Asai on 2016/10/01.
-//  Copyright © 2016年 Yusuke Asai. All rights reserved.
-//
+
 
 import Foundation
 import BigInt
